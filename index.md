@@ -1,46 +1,35 @@
 ---
 layout: page
-title: Hello World!
-tagline: Supporting tagline
+title: geoffrey thompson web site
+tagline: 
 ---
 {% include JB/setup %}
+##Geoffrey Thompson's Home Page
 
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
+This is a rather primitive professional web page, but I needed something functional in a hurry.
 
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
+I'm a graduate student in the Department of Statistics at Iowa State University. 
+My interests are statistical computing, statistical image compression, statistical image processing, clustering, and big data.
+I have a BA in mathematics from the University of Chicago and an MS in mathematics (actuarial science) from Roosevelt University.
 
-## Update Author Attributes
+I suppose a fuller, up-to-date CV is available by request.
 
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
+My `iastate edu` e-mail address is `gzt`. I can also be reached at my old `uchicago edu` e-mail address which is also `gzt`.
 
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
+## Teaching
+[STAT 401 Summer 2013 Lab Materials](./stat401/)
 
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
-
-<ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-</ul>
-
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
+## Links to software I like to use that you might find helpful and I think you should use if you aren't doing something better
+* [Emacs](http://www.gnu.org/software/emacs/) The One True Editor - comes with ESS and AucTeX support, which are very handy for doing statistics and writing up everything. knitr is not as well integrated as R Studio, though. Org Mode is supposed to be good, but I haven't started it.
+* [R Studio](http://www.rstudio.com) is mostly for when I want to do a lot of knitr-ing or exploring graphics, otherwise I use Emacs + ESS.
+Handy for organizing projects, integrating with git, building things if you haven't figured out that part of Emacs, too.
+* [R](http://www.r-project.com) I presume you already have R.
+* [pandoc](http://johnmacfarlane.net/pandoc/) makes converting text file formats from one to the other very easy. 
+The killer point of pandoc is that it can make making HTML5 slides with MathJAX really easy from simple markdown source. Which knitr can make from R Markdown source. You might need to use slidify, too. 
+* [knitr](http://yihui.name/knitr/) is incredibly useful for people who are writing reports and using R. You don't even need to know TeX,
+you can do it in markdown, which is like commenting [reddit](http://reddit.com), essentially. 
+* [ggplot2](http://ggplot2.org/) is a graphics package for R and is one of the better things about R. 
+* [LaTeX](http://www.latex-project.org/) is, in one sense, really great software, but in another, really terrible, but is definitely necessary.
 
 
+  
