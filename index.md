@@ -3,7 +3,7 @@ layout: page
 title: geoffrey thompson web site
 tagline: 
 ---
-{% include JB/setup %}
+
 ##Geoffrey Thompson's Home Page
 
 This is a rather primitive professional web page, but I needed something functional in a hurry.
