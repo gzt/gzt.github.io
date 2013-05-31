@@ -17,7 +17,7 @@ I suppose a fuller, up-to-date CV is available by request.
 My `iastate edu` e-mail address is `gzt`. I can also be reached at my old `uchicago edu` e-mail address which is also `gzt`.
 
 ## Teaching
-[STAT 401 Summer 2013 Lab Materials](./stat401/)
+[STAT 401 Summer 2013 Lab Materials](http://gzt.public.iastate.edu/stat401/)
 
 ## Links to software I like to use that you might find helpful and I think you should use if you aren't doing something better
 * [Emacs](http://www.gnu.org/software/emacs/) The One True Editor - comes with ESS and AucTeX support, which are very handy for doing statistics and writing up everything. knitr is not as well integrated as R Studio, though. Org Mode is supposed to be good, but I haven't started it.
@@ -30,6 +30,6 @@ The killer point of pandoc is that it can make making HTML5 slides with MathJAX 
 you can do it in markdown, which is like commenting [reddit](http://reddit.com), essentially. 
 * [ggplot2](http://ggplot2.org/) is a graphics package for R and is one of the better things about R. 
 * [LaTeX](http://www.latex-project.org/) is, in one sense, really great software, but in another, really terrible, but is definitely necessary.
-
-
+* [Jekyll](http://jekyllbootstrap.com/) I'm using Jekyll in the web-log and it sort of works okay. 
+* [Github](https://github.com/) is not really software, it's a website, but it's a great place. `git`, the software, is pretty good software, too.
   
