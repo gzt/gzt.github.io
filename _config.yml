@@ -9,14 +9,12 @@ pygments: true
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : Geoffrey Thompsons Home Page
-tagline: stuff
-author : gzt
-  name : Geoffrey Thompson
+title : gzt's adventures in statistical computing
+tagline: filmed before a live studio audience
+author :
+  name : geoffrey thompson
   email : gzt@iastate.edu
   github : gzt
-  twitter : 
-  feedburner : 
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
@@ -99,7 +97,7 @@ JB :
   # Set 'provider' to false to turn analytics off globally.
   #        
   analytics :
-    provider : false 
+    provider : false
     google : 
         tracking_id : 'UA-123-12'
     getclicky :
@@ -125,4 +123,3 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
-  
