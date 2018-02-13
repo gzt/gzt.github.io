@@ -3,64 +3,82 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/</loc>
+    <loc>http://gzt.github.io/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>http://gzt.github.io/about/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/some-linear-algebra-tricks/</loc>
+    <loc>http://gzt.github.io/post/working-with-c-and-r/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/post/some-linear-algebra-tricks/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>http://gzt.github.io/categories/c/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/linear-algebra/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <loc>http://gzt.github.io/tags/c/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/optimization/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <loc>http://gzt.github.io/categories/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/profiling/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
+    <loc>http://gzt.github.io/tags/linear-algebra/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <loc>http://gzt.github.io/tags/optimization/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <loc>http://gzt.github.io/post/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/tags/profiling/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/categories/r/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/tags/r/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/tags/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
