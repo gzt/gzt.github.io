@@ -4,18 +4,20 @@
 <head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='I&rsquo;m Geoff Thompson, a PhD candidate at the Department of Statistics at Iowa State University. I should be defending this year. My research interests have been in clustering and other classification problems as well as unsupervised or semisupervised learning. But, generally, a lot of aspects of going from large messy real-world data to the truth of what is going on. Some call it data science but I call it statistics.'>
+<meta name='description' content='I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
+library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) mle.matrixnorm(A, row.variance=&quot;AR(1)&quot;) ## $mean ## [,1] [,2] [,3] [,4] ## [1,] 0.23784768 0.03615944 0.05471075 0.06021446 ## [2,] 0.'>
 
-<meta property='og:title' content='About • gzt does statistics'>
-<meta property='og:description' content='I&rsquo;m Geoff Thompson, a PhD candidate at the Department of Statistics at Iowa State University. I should be defending this year. My research interests have been in clustering and other classification problems as well as unsupervised or semisupervised learning. But, generally, a lot of aspects of going from large messy real-world data to the truth of what is going on. Some call it data science but I call it statistics.'>
-<meta property='og:url' content='http://gzt.github.io/about/'>
+<meta property='og:title' content='Matrixdist News • gzt does statistics'>
+<meta property='og:description' content='I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
+library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) mle.matrixnorm(A, row.variance=&quot;AR(1)&quot;) ## $mean ## [,1] [,2] [,3] [,4] ## [1,] 0.23784768 0.03615944 0.05471075 0.06021446 ## [2,] 0.'>
+<meta property='og:url' content='http://gzt.github.io/post/matrixdist-new/'>
 <meta property='og:site_name' content='gzt does statistics'>
-<meta property='og:type' content='article'><meta property='article:section' content=''><meta property='article:published_time' content='2018-02-12T00:00:00Z'/><meta property='article:modified_time' content='2018-02-12T00:00:00Z'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='R'><meta property='article:tag' content='matrixdist'><meta property='article:published_time' content='2018-02-16T00:00:00Z'/><meta property='article:modified_time' content='2018-02-16T00:00:00Z'/><meta name='twitter:card' content='summary'>
 
 <meta name="generator" content="Hugo 0.36" />
 
-  <title>About • gzt does statistics</title>
-  <link rel='canonical' href='http://gzt.github.io/about/'>
+  <title>Matrixdist News • gzt does statistics</title>
+  <link rel='canonical' href='http://gzt.github.io/post/matrixdist-new/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -23,7 +25,7 @@
 </head>
 
 
-<body class='page type-page has-sidebar sidebar-sticky'>
+<body class='page type-post has-sidebar sidebar-sticky'>
 
   <div class='site'>
 
@@ -89,7 +91,7 @@
     <ul><li class='item'>
         <a href='/'>Home</a>
       </li><li class='item'>
-        <a class='current' aria-current='page' href='/about/'>About</a>
+        <a href='/about/'>About</a>
       </li><li class='item'>
         <a href='https://github.com/gzt/'>Repo</a>
       </li><li class='item'>
@@ -115,7 +117,7 @@
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>About</h1>
+      <h1 class='title'>Matrixdist News</h1>
       
 
     </div>
@@ -130,7 +132,7 @@
   
 </svg>
 <span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2018-02-12T00:00:00Z'>2018, Feb 12</time>
+  <time class='entry-date' datetime='2018-02-16T00:00:00Z'>2018, Feb 16</time>
 </span>
 
   
@@ -155,67 +157,102 @@
   
 
   <div class='container entry-content'>
-  
-
-<p>I&rsquo;m Geoff Thompson, a PhD candidate at the Department of Statistics at Iowa State University.
-I should be defending this year. My research interests have been in clustering
-and other classification problems as well as unsupervised or semisupervised learning.
-But, generally, a lot of aspects of going from large messy real-world data
-to the truth of what is going on. Some call it data science but I call it statistics.
-The applications have mostly been image-related, but I don&rsquo;t care what things
-look like, really. I also enjoyed working with the statistical consulting group
-for a couple years, since other people&rsquo;s problems are more interesting than my own,
-as that means I would work on the part that&rsquo;s interesting to me and
-they would work on the part that&rsquo;s interesting to them, then they would get to do the
-hard work of finishing the project and writing. For a moment, you feel like an expert
-in a completely foreign field.</p>
-
-<p>I also like long walks on the beach.</p>
-
-<h3 id="awards">Awards</h3>
-
-<ul>
-<li>2014 Statistical Computing Section Student Paper Award</li>
-<li>2015 Departmental Award for Excellence in Statistical Computing</li>
-<li>2017 Departmental Award for Excellence in Statistical Consulting</li>
-</ul>
-
-<h3 id="projects">Projects</h3>
-
-<ul>
-<li><code>matrixdist</code> an R package for working with matrix variate distributions such as the matrix variate normal or matrix variate <em>t</em>-distribution.</li>
-<li>Porting scalable <em>k</em>-means++ (or <em>k</em>-means||) to OpenMPI (a minor work).</li>
-<li>In progress: a similarity metric for binomial and multinomial image comparison accounting for structural similarity.</li>
-<li>In progress: a parallelization of Hartigan and Wong&rsquo;s k-means algorithm for OpenMPI.</li>
-<li>In progress: a clustering-based image compression algorithm.</li>
-<li>In progress: multinomial clustering with covariates.</li>
-<li>In progress: forensic matching of knife fragments.</li>
-<li>In progress: even more.</li>
-</ul>
-
-<h3 id="other-activities">Other activities</h3>
-
-<ul>
-<li>STATCOM - Statistics in the Community. Currently the president of the Iowa State University chapter. Provides outreach to the greater community - statistical consulting to non-profits as well as educational and informative events.</li>
-</ul>
-
-<h3 id="prior-work">Prior work</h3>
-
-<ul>
-<li>Human capital analyst in the HR department of Health Care Service Corporation for 5 years. Providing analytics and data-driven decision making for the Human Resources department in their consultations with internal customers. There were some cool ideas here but it made me realize that I needed a bit more formal grounding in this and decided to get a PhD in statistics as a result.</li>
-</ul>
+  <p>I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in <code>matrixdist</code>. This means I may submit it to CRAN soon (it’s currently available on <a href="http://www.github.com/gzt/matrixdist">github</a>). An example:</p>
+<pre class="r"><code>library(matrixdist)
+A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1])
+mle.matrixnorm(A, row.variance=&quot;AR(1)&quot;)</code></pre>
+<pre><code>## $mean
+##             [,1]        [,2]       [,3]       [,4]
+## [1,]  0.23784768  0.03615944 0.05471075 0.06021446
+## [2,]  0.11782308 -0.24118414 0.17761392 0.08083905
+## [3,] -0.08252311  0.02670089 0.19728084 0.09224818
+## 
+## $U
+##           [,1]      [,2]      [,3]
+## [1,] 1.0000000 0.8103196 0.6566179
+## [2,] 0.8103196 1.0000000 0.8103196
+## [3,] 0.6566179 0.8103196 1.0000000
+## 
+## $V
+##            [,1]       [,2]        [,3]        [,4]
+## [1,]  1.0000000 -0.4742776 -0.11386443 -0.06162850
+## [2,] -0.4742776  0.6293864  0.21788460  0.11522885
+## [3,] -0.1138644  0.2178846  0.63012819  0.08896749
+## [4,] -0.0616285  0.1152289  0.08896749  0.10940708
+## 
+## $var
+## [1] 11.30457
+## 
+## $iter
+## [1] 17
+## 
+## $tol
+## [1] 8.508737e-08
+## 
+## $logLik
+## [1] -2132.22
+## 
+## $convergence
+## [1] TRUE
+## 
+## $call
+## mle.matrixnorm(data = A, row.variance = &quot;AR(1)&quot;)</code></pre>
+<p>There is a performance hit as fitting for these require calls to <code>uniroot</code> to find the zeros of the derivatives, but it is not so bad in the cases I’ve looked at.</p>
+<pre class="r"><code>library(microbenchmark)
+res&lt;-microbenchmark(
+  mle.matrixnorm(A),
+  mle.matrixnorm(A, row.variance=&quot;AR(1)&quot;),
+  mle.matrixnorm(A, row.variance=&quot;CS&quot;)
+)
+plot(res, log=&quot;y&quot;, names = c(&quot;None&quot;, &quot;AR(1)&quot;, &quot;CS&quot;), 
+     col = c(&quot;darkred&quot;,&quot;royalblue&quot;,&quot;lightyellow&quot;),
+     xlab=&quot;Variance Structure&quot;)</code></pre>
+<p><img src="/post/2018-02-16-matrixdist-new_files/figure-html/benchmarking-1.png" width="672" /></p>
+<p>I will need to think hard about whether I want to add anything else first, as nobody wants to deal with massive updates to functionality in fast succession.</p>
+<p>Here is a possible agenda: * More distributions, such as skew <span class="math inline">\(t\)</span>-distributions. I do not have much interest in matrix variate gamma distributions or beta distributions. * Tools for working with matrix variate distributions, such as adaptations for LDA-type activities or clustering. * Parameter estimation for distributions besides the normal distribution. <span class="math inline">\(t\)</span>-distributions typically require use of EM or its extensions.</p>
 
 </div>
 
   
 <footer class='entry-footer'>
   <div class='container sep-before'>
+  <div class='categories'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
+  <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/r'>R</a></div>
+<div class='tags'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/r'>R</a>, <a class='tag' href='/tags/matrixdist'>Matrixdist</a></div>
+
   </div>
 </footer>
 
 
 </article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/post/working-with-c-and-r/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Working with C and R</a>
+    </div></div>
+</nav>
 
 
 

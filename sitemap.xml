@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>http://gzt.github.io/post/matrixdist-new/</loc>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://gzt.github.io/post/working-with-c-and-r/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
   </url>
@@ -23,13 +28,13 @@
   </url>
   
   <url>
-    <loc>http://gzt.github.io/categories/c/</loc>
+    <loc>http://gzt.github.io/tags/c/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/tags/c/</loc>
+    <loc>http://gzt.github.io/categories/c/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -47,6 +52,12 @@
   </url>
   
   <url>
+    <loc>http://gzt.github.io/tags/matrixdist/</loc>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://gzt.github.io/tags/optimization/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -54,7 +65,7 @@
   
   <url>
     <loc>http://gzt.github.io/post/</loc>
-    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -65,14 +76,14 @@
   </url>
   
   <url>
-    <loc>http://gzt.github.io/categories/r/</loc>
-    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+    <loc>http://gzt.github.io/tags/r/</loc>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/tags/r/</loc>
-    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+    <loc>http://gzt.github.io/categories/r/</loc>
+    <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
