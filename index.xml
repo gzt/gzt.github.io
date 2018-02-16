@@ -39,6 +39,15 @@ library(matrixdist) A &amp;lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = t
     </item>
     
     <item>
+      <title>why I&#39;ve been using base plot</title>
+      <link>http://gzt.github.io/post/why-i-ve-been-using-base-plot/</link>
+      <pubDate>Tue, 13 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/post/why-i-ve-been-using-base-plot/</guid>
+      <description>Nobody cares what I think, of course. The grammar of graphics is The Way, and ggplot2 is my preferred method of visualization. I never even really tried to make my own graphs with base plot until some point last fall (so: after 5 years of R) - I mean, I’m at Iowa State, after all. I don’t hang out with our Graphics Group as much as I should but that’s how I think about plotting.</description>
+    </item>
+    
+    <item>
       <title>Some linear algebra tricks</title>
       <link>http://gzt.github.io/post/some-linear-algebra-tricks/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>

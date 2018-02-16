@@ -23,14 +23,13 @@
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/some-linear-algebra-tricks/</loc>
-    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
+    <loc>http://gzt.github.io/post/why-i-ve-been-using-base-plot/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/categories/c/</loc>
-    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>http://gzt.github.io/post/some-linear-algebra-tricks/</loc>
+    <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -40,7 +39,25 @@
   </url>
   
   <url>
+    <loc>http://gzt.github.io/categories/c/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://gzt.github.io/categories/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/tags/ggplot2/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/tags/graphics/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -76,13 +93,13 @@
   </url>
   
   <url>
-    <loc>http://gzt.github.io/categories/r/</loc>
+    <loc>http://gzt.github.io/tags/r/</loc>
     <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/tags/r/</loc>
+    <loc>http://gzt.github.io/categories/r/</loc>
     <lastmod>2018-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
