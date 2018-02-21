@@ -5,10 +5,20 @@
     <link>http://gzt.github.io/categories/r/</link>
     <description>Recent content in R on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 16 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gzt.github.io/categories/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Notes on Discriminant Analysis for Matrix Variate Distributions</title>
+      <link>http://gzt.github.io/post/notes-on-discriminant-analysis-for-matrix-variate-distributions/</link>
+      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/post/notes-on-discriminant-analysis-for-matrix-variate-distributions/</guid>
+      <description>I have some brief notes for a discussion here so I’m posting them even though they’re a little incomplete because why not? Two-class classification for matrix variate normal distributions.
+Expected Cost of Misclassification ECM is expected cost of misclassification. Suppose there are two populations, \(\pi_1\) and \(\pi_2\) with prior probabilities of belonging to these classes, \(p_1\) and \(p_2\). Define a function, \(c(1|2)\) as the cost of misclassifying a member of population \(\pi_2\) as a member of class \(1\) (and vice versa).</description>
+    </item>
     
     <item>
       <title>Matrixdist News</title>
@@ -17,7 +27,7 @@
       
       <guid>http://gzt.github.io/post/matrixdist-new/</guid>
       <description>I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
-library(matrixdist) A &amp;lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) mle.matrixnorm(A, row.variance=&amp;quot;AR(1)&amp;quot;) $mean [,1] [,2] [,3] [,4] [1,] -0.23319124 0.101052880 0.2857941 0.2972354 [2,] -0.10564149 0.002280582 0.1703971 0.</description>
+library(matrixdist) A &amp;lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&amp;quot;AR(1)&amp;quot;) $mean [,1] [,2] [,3] [,4] [1,] -0.14927218 0.14837747 -0.12314591 0.2203576 [2,] 0.03791425 0.00645731 -0.05735620 0.</description>
     </item>
     
     <item>

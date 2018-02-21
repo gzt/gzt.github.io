@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linear algebra on gzt does statistics</title>
-    <link>http://gzt.github.io/tags/linear-algebra/</link>
-    <description>Recent content in Linear algebra on gzt does statistics</description>
+    <title>Matrix variate on gzt does statistics</title>
+    <link>http://gzt.github.io/tags/matrix-variate/</link>
+    <description>Recent content in Matrix variate on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Tue, 20 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gzt.github.io/tags/linear-algebra/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gzt.github.io/tags/matrix-variate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       <guid>http://gzt.github.io/post/notes-on-discriminant-analysis-for-matrix-variate-distributions/</guid>
       <description>I have some brief notes for a discussion here so I’m posting them even though they’re a little incomplete because why not? Two-class classification for matrix variate normal distributions.
 Expected Cost of Misclassification ECM is expected cost of misclassification. Suppose there are two populations, \(\pi_1\) and \(\pi_2\) with prior probabilities of belonging to these classes, \(p_1\) and \(p_2\). Define a function, \(c(1|2)\) as the cost of misclassifying a member of population \(\pi_2\) as a member of class \(1\) (and vice versa).</description>
-    </item>
-    
-    <item>
-      <title>Some linear algebra tricks</title>
-      <link>http://gzt.github.io/post/some-linear-algebra-tricks/</link>
-      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/post/some-linear-algebra-tricks/</guid>
-      <description>You may have come across some of this before, but I wanted to write this down for some future reference because it came up in a project of mine and I want to refer to it later. The general theme is that if you know something about the structure of the matrices you’re working with, you can sometimes speed some things up.
-Avoiding matrix inversion. Why do you want to invert your matrix?</description>
     </item>
     
   </channel>
