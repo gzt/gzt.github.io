@@ -27,11 +27,7 @@ Expected Cost of Misclassification ECM is expected cost of misclassification. Su
       
       <guid>http://gzt.github.io/post/matrixdist-new/</guid>
       <description>I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
-<<<<<<< HEAD
 library(matrixdist) A &amp;lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&amp;quot;AR(1)&amp;quot;) $mean [,1] [,2] [,3] [,4] [1,] 0.07425945 -0.1277509 -0.15602140 0.5687155 [2,] 0.09761592 -0.1253225 -0.10766017 0.</description>
-=======
-library(matrixdist) A &amp;lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&amp;quot;AR(1)&amp;quot;) $mean [,1] [,2] [,3] [,4] [1,] -0.14927218 0.14837747 -0.12314591 0.2203576 [2,] 0.03791425 0.00645731 -0.05735620 0.</description>
->>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
     </item>
     
     <item>

@@ -13,14 +13,11 @@
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>http://gzt.github.io/post/software-for-matrix-variate-lda-and-qda/</loc>
     <lastmod>2018-02-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-=======
->>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
     <loc>http://gzt.github.io/post/notes-on-discriminant-analysis-for-matrix-variate-distributions/</loc>
     <lastmod>2018-02-20T00:00:00+00:00</lastmod>
   </url>
@@ -46,13 +43,13 @@
   </url>
   
   <url>
-    <loc>http://gzt.github.io/tags/c/</loc>
+    <loc>http://gzt.github.io/categories/c/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/categories/c/</loc>
+    <loc>http://gzt.github.io/tags/c/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -65,11 +62,7 @@
   
   <url>
     <loc>http://gzt.github.io/tags/classification/</loc>
-<<<<<<< HEAD
     <lastmod>2018-02-22T00:00:00+00:00</lastmod>
-=======
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
->>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
     <priority>0</priority>
   </url>
   
@@ -93,21 +86,13 @@
   
   <url>
     <loc>http://gzt.github.io/tags/matrix-variate/</loc>
-<<<<<<< HEAD
     <lastmod>2018-02-22T00:00:00+00:00</lastmod>
-=======
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
->>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://gzt.github.io/tags/matrixdist/</loc>
-<<<<<<< HEAD
     <lastmod>2018-02-22T00:00:00+00:00</lastmod>
-=======
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
->>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
     <priority>0</priority>
   </url>
   
@@ -119,11 +104,7 @@
   
   <url>
     <loc>http://gzt.github.io/post/</loc>
-<<<<<<< HEAD
     <lastmod>2018-02-22T00:00:00+00:00</lastmod>
-=======
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
->>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
     <priority>0</priority>
   </url>
   
@@ -134,23 +115,14 @@
   </url>
   
   <url>
-<<<<<<< HEAD
-    <loc>http://gzt.github.io/tags/r/</loc>
-=======
     <loc>http://gzt.github.io/categories/r/</loc>
->>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-<<<<<<< HEAD
-    <loc>http://gzt.github.io/categories/r/</loc>
-    <lastmod>2018-02-22T00:00:00+00:00</lastmod>
-=======
     <loc>http://gzt.github.io/tags/r/</loc>
     <lastmod>2018-02-20T00:00:00+00:00</lastmod>
->>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
     <priority>0</priority>
   </url>
   
