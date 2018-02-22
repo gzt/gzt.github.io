@@ -5,11 +5,19 @@
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta name='description' content='I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
+<<<<<<< HEAD
 library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;) $mean [,1] [,2] [,3] [,4] [1,] 0.07425945 -0.1277509 -0.15602140 0.5687155 [2,] 0.09761592 -0.1253225 -0.10766017 0.'>
 
 <meta property='og:title' content='Matrixdist News • gzt does statistics'>
 <meta property='og:description' content='I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
 library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;) $mean [,1] [,2] [,3] [,4] [1,] 0.07425945 -0.1277509 -0.15602140 0.5687155 [2,] 0.09761592 -0.1253225 -0.10766017 0.'>
+=======
+library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;) $mean [,1] [,2] [,3] [,4] [1,] -0.14927218 0.14837747 -0.12314591 0.2203576 [2,] 0.03791425 0.00645731 -0.05735620 0.'>
+
+<meta property='og:title' content='Matrixdist News • gzt does statistics'>
+<meta property='og:description' content='I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
+library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;) $mean [,1] [,2] [,3] [,4] [1,] -0.14927218 0.14837747 -0.12314591 0.2203576 [2,] 0.03791425 0.00645731 -0.05735620 0.'>
+>>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
 <meta property='og:url' content='http://gzt.github.io/post/matrixdist-new/'>
 <meta property='og:site_name' content='gzt does statistics'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='R'><meta property='article:tag' content='matrixdist'><meta property='article:published_time' content='2018-02-16T00:00:00Z'/><meta property='article:modified_time' content='2018-02-16T00:00:00Z'/><meta name='twitter:card' content='summary'>
@@ -61,7 +69,11 @@ library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toepl
       </li><li>
         <a href='/tags/r' style='font-size:2em'>R</a>
       </li><li>
+<<<<<<< HEAD
         <a href='/tags/classification' style='font-size:1.25em'>Classification</a>
+=======
+        <a href='/tags/classification' style='font-size:1em'>Classification</a>
+>>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
       </li><li>
         <a href='/tags/ggplot2' style='font-size:1em'>Ggplot2</a>
       </li><li>
@@ -69,9 +81,15 @@ library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toepl
       </li><li>
         <a href='/tags/linear-algebra' style='font-size:1.25em'>Linear algebra</a>
       </li><li>
+<<<<<<< HEAD
         <a href='/tags/matrix-variate' style='font-size:1.25em'>Matrix variate</a>
       </li><li>
         <a href='/tags/matrixdist' style='font-size:1.5em'>Matrixdist</a>
+=======
+        <a href='/tags/matrix-variate' style='font-size:1em'>Matrix variate</a>
+      </li><li>
+        <a href='/tags/matrixdist' style='font-size:1.25em'>Matrixdist</a>
+>>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
       </li><li>
         <a href='/tags/optimization' style='font-size:1.25em'>Optimization</a>
       </li><li>
@@ -170,6 +188,7 @@ library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toepl
 A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1])
 MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;)</code></pre>
 <pre><code>$mean
+<<<<<<< HEAD
            [,1]       [,2]        [,3]      [,4]
 [1,] 0.07425945 -0.1277509 -0.15602140 0.5687155
 [2,] 0.09761592 -0.1253225 -0.10766017 0.2535468
@@ -199,6 +218,37 @@ $tol
 
 $logLik
 [1] -1808.526
+=======
+            [,1]        [,2]        [,3]      [,4]
+[1,] -0.14927218  0.14837747 -0.12314591 0.2203576
+[2,]  0.03791425  0.00645731 -0.05735620 0.3784914
+[3,]  0.01535545 -0.08127382 -0.03381158 0.2619816
+
+$U
+          [,1]      [,2]      [,3]
+[1,] 1.0000000 0.7866886 0.6188790
+[2,] 0.7866886 1.0000000 0.7866886
+[3,] 0.6188790 0.7866886 1.0000000
+
+$V
+           [,1]       [,2]       [,3]       [,4]
+[1,]  1.0000000 -0.4236611  0.7437683 -0.3955942
+[2,] -0.4236611  2.2171441  0.1979485 -0.2037806
+[3,]  0.7437683  0.1979485  1.9569907 -1.2878996
+[4,] -0.3955942 -0.2037806 -1.2878996  2.2411468
+
+$var
+[1] 2.91058
+
+$iter
+[1] 14
+
+$tol
+[1] 8.02815e-08
+
+$logLik
+[1] -2149.492
+>>>>>>> b3070be22caa29c6eb32a0cce927d4c72d8e5762
 
 $convergence
 [1] TRUE
