@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Matrixdist on gzt does statistics</title>
-    <link>http://gzt.github.io/tags/matrixdist/</link>
-    <description>Recent content in Matrixdist on gzt does statistics</description>
+    <title>Matrix variate on gzt does statistics</title>
+    <link>http://gzt.github.io/tags/matrix-variate/</link>
+    <description>Recent content in Matrix variate on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Thu, 22 Feb 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gzt.github.io/tags/matrixdist/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://gzt.github.io/tags/matrix-variate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -27,16 +27,6 @@
       <guid>http://gzt.github.io/post/notes-on-discriminant-analysis-for-matrix-variate-distributions/</guid>
       <description>I have some brief notes for a discussion here so I’m posting them even though they’re a little incomplete because why not? Two-class classification for matrix variate normal distributions.
 Expected Cost of Misclassification ECM is expected cost of misclassification. Suppose there are two populations, \(\pi_1\) and \(\pi_2\) with prior probabilities of belonging to these classes, \(p_1\) and \(p_2\). Define a function, \(c(1|2)\) as the cost of misclassifying a member of population \(\pi_2\) as a member of class \(1\) (and vice versa).</description>
-    </item>
-    
-    <item>
-      <title>Matrixdist News</title>
-      <link>http://gzt.github.io/post/matrixdist-new/</link>
-      <pubDate>Fri, 16 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/post/matrixdist-new/</guid>
-      <description>I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
-library(matrixdist) A &amp;lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&amp;quot;AR(1)&amp;quot;) $mean [,1] [,2] [,3] [,4] [1,] 0.07425945 -0.1277509 -0.15602140 0.5687155 [2,] 0.09761592 -0.1253225 -0.10766017 0.</description>
     </item>
     
   </channel>

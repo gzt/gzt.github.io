@@ -4,20 +4,18 @@
 <head>
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
-<meta name='description' content='I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
-library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;) $mean [,1] [,2] [,3] [,4] [1,] 0.07425945 -0.1277509 -0.15602140 0.5687155 [2,] 0.09761592 -0.1253225 -0.10766017 0.'>
+<meta name='description' content='In the previous post, I had some rough notes on classification of matrix variate data. In the matrixdist package, I now have some functions for training a linear or quadratic classifier. The usage is pretty similar to the function MASS::lda() or MASS::qda(), however it requires the input as an array or list of matrices and the group variable provided as a vector (that is, it cannot handle data frames or the formula interface directly, which is reasonable, as there is no immediately clear way to make that work for a collection of matrices - anybody using it would have to roll their own solutions anyway).'>
 
-<meta property='og:title' content='Matrixdist News • gzt does statistics'>
-<meta property='og:description' content='I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
-library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;) $mean [,1] [,2] [,3] [,4] [1,] 0.07425945 -0.1277509 -0.15602140 0.5687155 [2,] 0.09761592 -0.1253225 -0.10766017 0.'>
-<meta property='og:url' content='http://gzt.github.io/post/matrixdist-new/'>
+<meta property='og:title' content='Software for Matrix Variate LDA and QDA • gzt does statistics'>
+<meta property='og:description' content='In the previous post, I had some rough notes on classification of matrix variate data. In the matrixdist package, I now have some functions for training a linear or quadratic classifier. The usage is pretty similar to the function MASS::lda() or MASS::qda(), however it requires the input as an array or list of matrices and the group variable provided as a vector (that is, it cannot handle data frames or the formula interface directly, which is reasonable, as there is no immediately clear way to make that work for a collection of matrices - anybody using it would have to roll their own solutions anyway).'>
+<meta property='og:url' content='http://gzt.github.io/post/software-for-matrix-variate-lda-and-qda/'>
 <meta property='og:site_name' content='gzt does statistics'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='R'><meta property='article:tag' content='matrixdist'><meta property='article:published_time' content='2018-02-16T00:00:00Z'/><meta property='article:modified_time' content='2018-02-16T00:00:00Z'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='matrix variate'><meta property='article:tag' content='classification'><meta property='article:tag' content='matrixdist'><meta property='article:published_time' content='2018-02-22T00:00:00Z'/><meta property='article:modified_time' content='2018-02-22T00:00:00Z'/><meta name='twitter:card' content='summary'>
 
 <meta name="generator" content="Hugo 0.36" />
 
-  <title>Matrixdist News • gzt does statistics</title>
-  <link rel='canonical' href='http://gzt.github.io/post/matrixdist-new/'>
+  <title>Software for Matrix Variate LDA and QDA • gzt does statistics</title>
+  <link rel='canonical' href='http://gzt.github.io/post/software-for-matrix-variate-lda-and-qda/'>
   
   
   <link rel='icon' href='/favicon.ico'>
@@ -125,7 +123,7 @@ library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toepl
   <header class='header entry-header'>
   <div class='container sep-after'>
     <div class='header-info'>
-      <h1 class='title'>Matrixdist News</h1>
+      <h1 class='title'>Software for Matrix Variate LDA and QDA</h1>
       
 
     </div>
@@ -140,7 +138,7 @@ library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toepl
   
 </svg>
 <span class='screen-reader-text'>Posted on </span>
-  <time class='entry-date' datetime='2018-02-16T00:00:00Z'>2018, Feb 16</time>
+  <time class='entry-date' datetime='2018-02-22T00:00:00Z'>2018, Feb 22</time>
 </span>
 
   
@@ -151,7 +149,7 @@ library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toepl
   <polyline points="12 6 12 12 15 15"/>
   
 </svg>
-2 mins read
+3 mins read
 </span>
 
 
@@ -165,65 +163,70 @@ library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toepl
   
 
   <div class='container entry-content'>
-  <p>I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in <code>matrixdist</code>. This means I may submit it to CRAN soon (it’s currently available on <a href="http://www.github.com/gzt/matrixdist">github</a>). An example:</p>
-<pre class="r"><code>library(matrixdist)
-A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1])
-MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;)</code></pre>
-<pre><code>$mean
-           [,1]       [,2]        [,3]      [,4]
-[1,] 0.07425945 -0.1277509 -0.15602140 0.5687155
-[2,] 0.09761592 -0.1253225 -0.10766017 0.2535468
-[3,] 0.13562486 -0.2465561 -0.06357124 0.2790545
-
-$U
-          [,1]      [,2]      [,3]
-[1,] 1.0000000 0.7915968 0.6266255
-[2,] 0.7915968 1.0000000 0.7915968
-[3,] 0.6266255 0.7915968 1.0000000
-
-$V
-           [,1]      [,2]       [,3]       [,4]
-[1,]  1.0000000 -1.214127 -0.3779589  1.2365371
-[2,] -1.2141270  1.825120  0.5151700 -1.3393436
-[3,] -0.3779589  0.515170  0.3699613 -0.5547584
-[4,]  1.2365371 -1.339344 -0.5547584  4.9947452
-
-$var
-[1] 3.237086
-
-$iter
-[1] 17
-
-$tol
-[1] 5.677275e-08
-
-$logLik
-[1] -1808.526
-
-$convergence
-[1] TRUE
-
-$call
-MLmatrixnorm(data = A, row.variance = &quot;AR(1)&quot;)</code></pre>
-<p>There is a performance hit as fitting for these require calls to <code>uniroot</code> to find the zeros of the derivatives, but it is not so bad in the cases I’ve looked at.</p>
-<pre class="r"><code>library(microbenchmark)
-res&lt;-microbenchmark(
-  MLmatrixnorm(A),
-  MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;),
-  MLmatrixnorm(A, row.variance=&quot;CS&quot;)
-)
-plot(res, log=&quot;y&quot;, names = c(&quot;None&quot;, &quot;AR(1)&quot;, &quot;CS&quot;), 
-     col = c(&quot;darkred&quot;,&quot;royalblue&quot;,&quot;lightyellow&quot;),
-     xlab=&quot;Variance Structure&quot;)</code></pre>
-<p><img src="/post/2018-02-16-matrixdist-new_files/figure-html/benchmarking-1.png" width="672" /></p>
-<p>I will need to think hard about whether I want to add anything else first, as nobody wants to deal with massive updates to functionality in fast succession.</p>
-<p>Here is a possible agenda:</p>
-<ul>
-<li>More distributions, such as skew <span class="math inline">\(t\)</span>-distributions. I do not have much interest in matrix variate gamma distributions or beta distributions.</li>
-<li>Tools for working with matrix variate distributions, such as adaptations for LDA-type activities or clustering.</li>
-<li>Parameter estimation for distributions besides the normal distribution. <span class="math inline">\(t\)</span>-distributions typically require use of EM or its extensions.</li>
-<li>The <span class="math inline">\(t\)</span> distribution is parameterized differently between the matrix variate and multivariate cases - namely, a factor of <span class="math inline">\(\nu\)</span>. I changed it to be consistent with the multivariate case, but I probably should not have done so.</li>
-</ul>
+  <p>In the previous post, I had some rough notes on classification of matrix variate data. In the <code>matrixdist</code> package, I now have some functions for training a linear or quadratic classifier. The usage is pretty similar to the function <code>MASS::lda()</code> or <code>MASS::qda()</code>, however it requires the input as an array or list of matrices and the group variable provided as a vector (that is, it cannot handle data frames or the formula interface directly, which is reasonable, as there is no immediately clear way to make that work for a collection of matrices - anybody using it would have to roll their own solutions anyway).</p>
+<pre class="r"><code>set.seed(20180222)
+library(&#39;matrixdist&#39;)
+A &lt;- rmatrixnorm(30, mean = matrix(0, nrow=2, ncol=3))
+B &lt;- rmatrixnorm(30, mean = matrix(c(1,0), nrow=2, ncol=3))
+C &lt;- rmatrixnorm(30, mean = matrix(c(0,1), nrow=2, ncol=3))
+ABC &lt;- array(c(A,B,C), dim = c(2,3,90))
+groups &lt;- factor(c(rep(&quot;A&quot;,30),rep(&quot;B&quot;,30),rep(&quot;C&quot;,30)))
+prior = c(30,30,30)/90
+matlda &lt;- matrixlda(x = ABC,grouping = groups, prior = prior)
+matqda &lt;- matrixqda(x = ABC,grouping = groups, prior = prior)</code></pre>
+<p>This does not sphere the data or extract an SVD or Fisher discriminant scores - it is a simple linear/quadratic discriminant function based on the likelihood function (see previous post for details). As such, the reported posteriors are based on the normal distribution.</p>
+<p>The <code>matrixlda</code> function presumes equal covariance parameters while <code>matrixqda</code> fits separate covariance parameters.</p>
+<p>It is possible to set variance or mean restrictions using the <code>...</code> argument. These restrictions are applied to all groups.</p>
+<p>The <code>predict</code> method for these objects works in much the same way as for <code>lda</code> or <code>qda</code> objects: provide the function and the new data, then it will return the MAP class assignments and the posterior. If no new data is provided, it will attempt to run it on the original data if it is available in the environment.</p>
+<pre class="r"><code>ABC[,,c(1,31,61)] # true class memberships: A, B, C</code></pre>
+<pre><code>## , , 1
+## 
+##             [,1]       [,2]      [,3]
+## [1,] -0.07020924  0.8559433 0.9827602
+## [2,]  1.30097854 -0.6893054 0.2830575
+## 
+## , , 2
+## 
+##           [,1]     [,2]        [,3]
+## [1,] 2.2374662 2.408268 -0.37053822
+## [2,] 0.9653824 0.630897 -0.08850761
+## 
+## , , 3
+## 
+##            [,1]       [,2]      [,3]
+## [1,] -1.6961217 -1.5642705 0.2045711
+## [2,]  0.7782369  0.1842012 0.3869149</code></pre>
+<pre class="r"><code>predict(matlda, ABC[,,c(1,31,61)])</code></pre>
+<pre><code>## $class
+## [1] B B A
+## Levels: A B C
+## 
+## $posterior
+##           [,1]        [,2]       [,3]
+## [1,] 0.2848957 0.676956971 0.03814737
+## [2,] 0.0368267 0.951800210 0.01137309
+## [3,] 0.5314847 0.001123022 0.46739225</code></pre>
+<pre class="r"><code>predict(matqda,  ABC[,,c(1,31,61)])</code></pre>
+<pre><code>## $class
+## [1] B B A
+## Levels: A B C
+## 
+## $posterior
+##           [,1]        [,2]       [,3]
+## [1,] 0.2502014 0.726688139 0.02311051
+## [2,] 0.0342978 0.961948479 0.00375372
+## [3,] 0.5318650 0.007353527 0.46078146</code></pre>
+<p>In this example, points from classes A, B, and C were selected and they ended up being classifed as B, B, and A. The QDA and LDA rules had only minor disagreements, which is to be expected when they do truly have the same covariances.</p>
+<div id="mathematical-detail" class="section level2">
+<h2>Mathematical detail</h2>
+<p>The factor <span class="math inline">\(R\)</span> for each group <span class="math inline">\(g\)</span> in a QDA setting is:</p>
+<span class="math display">\[\begin{eqnarray} 
+R_g(\mathbf{X}) &amp; = &amp; \mathrm{trace}\big[ -\frac{1}{2}(\mathbf{V}_g^{-1} \mathbf{X}^{T} \mathbf{U}_g^{-1} \mathbf{X}  +(\mathbf{V}_g^{-1} \mathbf{M}_g^{T} \mathbf{U}_g^{-1}) \mathbf{X}  -\frac{1}{2}(\mathbf{V}_g^{-1} \mathbf{M}_g^{T} \mathbf{U}_g^{-1} \mathbf{M}_g)  \big]   \\ 
+ &amp;  &amp; -\frac{1}{2}(p (\log|\mathbf{U}_g|)+ n(\log|\mathbf{V}_g|) )  + \log p_g 
+\end{eqnarray}\]</span>
+<p>When <span class="math inline">\(U_i = U_j\)</span> for all groups <span class="math inline">\(i,j\)</span>, several of these terms cancel. The posterior probability is:</p>
+<p><span class="math display">\[ P(\mathbf{X} \in g) = \frac{ \exp (R_g (\mathbf{X}))}{\sum_i \exp (R_i(\mathbf{X}))} \]</span> with the bottom sum being over all groups <span class="math inline">\(i\)</span>.</p>
+</div>
 
 </div>
 
@@ -246,7 +249,7 @@ plot(res, log=&quot;y&quot;, names = c(&quot;None&quot;, &quot;AR(1)&quot;, &quo
   
 </svg>
 </span>
-  <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/r'>R</a>, <a class='tag' href='/tags/matrixdist'>Matrixdist</a></div>
+  <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/matrix-variate'>matrix variate</a>, <a class='tag' href='/tags/classification'>Classification</a>, <a class='tag' href='/tags/matrixdist'>Matrixdist</a></div>
 
   </div>
 </footer>
@@ -256,7 +259,7 @@ plot(res, log=&quot;y&quot;, names = c(&quot;None&quot;, &quot;AR(1)&quot;, &quo
 
 <nav class='entry-nav'>
   <div class='container'><div class='prev-entry sep-before'>
-      <a href='/post/working-with-c-and-r/'>
+      <a href='/post/notes-on-discriminant-analysis-for-matrix-variate-distributions/'>
         <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <line x1="20" y1="12" x2="4" y2="12"/>
@@ -264,17 +267,7 @@ plot(res, log=&quot;y&quot;, names = c(&quot;None&quot;, &quot;AR(1)&quot;, &quo
   
 </svg>
  Previous</span>
-        <span class='screen-reader-text'>Previous post: </span>Working with C and R</a>
-    </div><div class='next-entry sep-before'>
-      <a href='/post/notes-on-discriminant-analysis-for-matrix-variate-distributions/'>
-        <span class='screen-reader-text'>Next post: </span>Notes on Discriminant Analysis for Matrix Variate Distributions<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
-  
-  <line x1="4" y1="12" x2="20" y2="12"/>
-  <polyline points="14 6 20 12 14 18"/>
-  
-</svg>
-</span>
-      </a>
+        <span class='screen-reader-text'>Previous post: </span>Notes on Discriminant Analysis for Matrix Variate Distributions</a>
     </div></div>
 </nav>
 
