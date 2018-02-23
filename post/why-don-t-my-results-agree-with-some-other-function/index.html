@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Or even with other functions in the same package? With a set seed, one would expect the random draws from two equivalent distributions to be the same.
+library(&#39;matrixdist&#39;) set.seed(20180223) rmatrixnorm(n = 1, mean = matrix(0, nrow = 1, ncol = 5), array = T) ## , , 1 ## ## [,1] [,2] [,3] [,4] [,5] ## [1,] 1.153053 -0.08006347 1.040504 0.9671611 -0.002402098 set.seed(20180223) rmatrixnorm(n = 1, mean = matrix(0, nrow = 5, ncol = 1), array = T) ## , , 1 ## ## [,1] ## [1,] 1.'>
+
+<meta property='og:title' content='Why don&#39;t my results agree with some other function? • gzt does statistics'>
+<meta property='og:description' content='Or even with other functions in the same package? With a set seed, one would expect the random draws from two equivalent distributions to be the same.
+library(&#39;matrixdist&#39;) set.seed(20180223) rmatrixnorm(n = 1, mean = matrix(0, nrow = 1, ncol = 5), array = T) ## , , 1 ## ## [,1] [,2] [,3] [,4] [,5] ## [1,] 1.153053 -0.08006347 1.040504 0.9671611 -0.002402098 set.seed(20180223) rmatrixnorm(n = 1, mean = matrix(0, nrow = 5, ncol = 1), array = T) ## , , 1 ## ## [,1] ## [1,] 1.'>
+<meta property='og:url' content='http://gzt.github.io/post/why-don-t-my-results-agree-with-some-other-function/'>
+<meta property='og:site_name' content='gzt does statistics'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='matrixdist'><meta property='article:tag' content='randomness'><meta property='article:published_time' content='2018-02-23T00:00:00Z'/><meta property='article:modified_time' content='2018-02-23T00:00:00Z'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.36" />
+
+  <title>Why don&#39;t my results agree with some other function? • gzt does statistics</title>
+  <link rel='canonical' href='http://gzt.github.io/post/why-don-t-my-results-agree-with-some-other-function/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.22d77285.css'><link rel='stylesheet' href='/css/custom.css'>
+</head>
+
+
+<body class='page type-post has-sidebar sidebar-sticky'>
+
+  <div class='site'>
+
+    <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+<div id='sidebar' class='sidebar'>
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/2553342.jpg'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+    gzt does statistics
+    </h2>
+    <div class='desc'>
+    inverted matrix variate gzt distribution
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/c' style='font-size:1em'>C</a>
+      </li><li>
+        <a href='/tags/r' style='font-size:2em'>R</a>
+      </li><li>
+        <a href='/tags/classification' style='font-size:1.25em'>Classification</a>
+      </li><li>
+        <a href='/tags/ggplot2' style='font-size:1em'>Ggplot2</a>
+      </li><li>
+        <a href='/tags/graphics' style='font-size:1em'>Graphics</a>
+      </li><li>
+        <a href='/tags/linear-algebra' style='font-size:1.25em'>Linear algebra</a>
+      </li><li>
+        <a href='/tags/matrix-variate' style='font-size:1.25em'>Matrix variate</a>
+      </li><li>
+        <a href='/tags/matrixdist' style='font-size:1.75em'>Matrixdist</a>
+      </li><li>
+        <a href='/tags/optimization' style='font-size:1.25em'>Optimization</a>
+      </li><li>
+        <a href='/tags/profiling' style='font-size:1.25em'>Profiling</a>
+      </li><li>
+        <a href='/tags/randomness' style='font-size:1em'>Randomness</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+</div>
+
+    <div class='main'>
+
+      <nav id='main-menu' class='main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='hamburger hamburger--arrow sidebar-toggler' type='button' aria-controls='sidebar' aria-expanded='false'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/about/'>About</a>
+      </li><li class='item'>
+        <a href='https://github.com/gzt/'>Repo</a>
+      </li><li class='item'>
+        <a href='/categories/'>Categories</a>
+      </li><li class='item'>
+        <a href='/tags/'>Tags</a>
+      </li></ul>
+  </div>
+</nav>
+
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>gzt does statistics</p><p class='desc site-desc'>inverted matrix variate gzt distribution</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Why don&#39;t my results agree with some other function?</h1>
+      
+
+    </div>
+    
+<div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2018-02-23T00:00:00Z'>2018, Feb 23</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+4 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  <p>Or even with other functions in the same package? With a set seed, one would expect the random draws from two equivalent distributions to be the same.</p>
+<pre class="r"><code>library(&#39;matrixdist&#39;)
+set.seed(20180223)
+rmatrixnorm(n = 1, mean = matrix(0, nrow = 1, ncol = 5), array = T)</code></pre>
+<pre><code>## , , 1
+## 
+##          [,1]        [,2]     [,3]      [,4]         [,5]
+## [1,] 1.153053 -0.08006347 1.040504 0.9671611 -0.002402098</code></pre>
+<pre class="r"><code>set.seed(20180223)
+rmatrixnorm(n = 1, mean = matrix(0, nrow = 5, ncol = 1), array = T)</code></pre>
+<pre><code>## , , 1
+## 
+##              [,1]
+## [1,]  1.153052900
+## [2,] -0.080063466
+## [3,]  1.040504256
+## [4,]  0.967161119
+## [5,] -0.002402098</code></pre>
+<pre class="r"><code>set.seed(20180223)
+rnorm(5)</code></pre>
+<pre><code>## [1]  1.153052900 -0.080063466  1.040504256  0.967161119 -0.002402098</code></pre>
+<p>However, this breaks when we try it with the <span class="math inline">\(t\)</span>-distribution.</p>
+<pre class="r"><code>set.seed(20180223)
+rmatrixt(n = 1, df = 5, mean = matrix(0, nrow = 1, ncol = 5))</code></pre>
+<pre><code>##           [,1]        [,2]      [,3]      [,4]         [,5]
+## [1,] 0.5556109 -0.03857944 0.5013781 0.4660369 -0.001157477</code></pre>
+<pre class="r"><code>set.seed(20180223)
+rmatrixt(n = 1, df = 5, mean = matrix(0, nrow = 5, ncol = 1))</code></pre>
+<pre><code>##            [,1]
+## [1,] 0.80490445
+## [2,] 0.04992909
+## [3,] 0.38812672
+## [4,] 0.96679126
+## [5,] 0.33254232</code></pre>
+<p>What is going on here?</p>
+<p>It is not because the densities are calculated differently or the distributions are different.</p>
+<pre class="r"><code>x = matrix(1, nrow=5, ncol=1)
+dmatrixt(x, df = 5)</code></pre>
+<pre><code>## [1] 0.0001327224</code></pre>
+<pre class="r"><code>dmatrixt(t(x), df = 5)</code></pre>
+<pre><code>## [1] 0.0001327224</code></pre>
+<pre class="r"><code>A &lt;- t(drop(rmatrixt(n = 1e5, df = 5, mean = matrix(0, nrow = 1, ncol = 5))))
+B &lt;- t(drop(rmatrixt(n = 1e5, df = 5, mean = matrix(0, nrow = 5, ncol = 1))))
+var(A)</code></pre>
+<pre><code>##               [,1]          [,2]         [,3]          [,4]         [,5]
+## [1,]  0.3376941545 -0.0026526140 -0.003364226  0.0002350722  0.001506509
+## [2,] -0.0026526140  0.3392196610  0.002651327 -0.0001851677 -0.004766983
+## [3,] -0.0033642256  0.0026513274  0.332201222 -0.0012015348  0.001478222
+## [4,]  0.0002350722 -0.0001851677 -0.001201535  0.3336451673 -0.002856316
+## [5,]  0.0015065085 -0.0047669830  0.001478222 -0.0028563164  0.332690166</code></pre>
+<pre class="r"><code>var(B)</code></pre>
+<pre><code>##               [,1]          [,2]          [,3]          [,4]          [,5]
+## [1,]  0.3308014396 -0.0014946855  0.0028350338 -0.0008405594  0.0006931611
+## [2,] -0.0014946855  0.3289382913  0.0017313093  0.0004647432  0.0031412509
+## [3,]  0.0028350338  0.0017313093  0.3324019321 -0.0001002768  0.0026761169
+## [4,] -0.0008405594  0.0004647432 -0.0001002768  0.3343747962 -0.0037769019
+## [5,]  0.0006931611  0.0031412509  0.0026761169 -0.0037769019  0.3338379308</code></pre>
+<p>In fact, if we look at <code>rmvt</code> from the excellent <code>mvtnorm</code> package, we can see that one of them agrees with their function.</p>
+<pre class="r"><code>library(&#39;mvtnorm&#39;)
+set.seed(20180223)
+rmatrixt(n = 1, df = 5, mean = matrix(0, nrow = 1, ncol = 5))</code></pre>
+<pre><code>##           [,1]        [,2]      [,3]      [,4]         [,5]
+## [1,] 0.5556109 -0.03857944 0.5013781 0.4660369 -0.001157477</code></pre>
+<pre class="r"><code>set.seed(20180223)
+rmvt(1,sigma=.2*diag(5), df = 5) # note that matrix t is scaled by DF compared to multivariate t</code></pre>
+<pre><code>##           [,1]        [,2]      [,3]      [,4]         [,5]
+## [1,] 0.5556109 -0.03857944 0.5013781 0.4660369 -0.001157477</code></pre>
+<div id="what-is-going-on" class="section level2">
+<h2>What is going on</h2>
+<p>Here is a hint as to what is happening from the source code of <code>rmvt</code>:</p>
+<pre class="r"><code>rmvnorm(n, mean = delta, sigma = sigma, ...)/sqrt(rchisq(n, 
+            df)/df)</code></pre>
+<p>It draws from the multivariate normal distribution and then scales by individual draws from <code>rchisq</code>. This is essentially what happens in <code>rmatrixt</code> as well when the dimension of <span class="math inline">\(U\)</span> (the number of rows) is <span class="math inline">\(1\)</span>. The matrix version takes the Cholesky factor of an inverse Wishart draw, which in the 1-dimensional case is the inverse of the square root of a draw from <code>rchisq</code>.</p>
+<p>However, when the dimension (<span class="math inline">\(p\)</span>) of <span class="math inline">\(U\)</span> is larger than <span class="math inline">\(1\)</span>, the multiplicative factor is not the same, it is the Cholesky factor of an inverse Wishart draw of dimension <span class="math inline">\(p\)</span>, which involves drawing <span class="math inline">\(p\)</span> <code>rchisq</code> and <code>choose(p, 2)-p</code> draws from <code>rnorm</code>. The densities end up the same but the computation involves such different numbers there is no hope of getting the same numbers. Further, this suggests that, when drawing from matrix variate <span class="math inline">\(t\)</span>-distributions, given that <span class="math inline">\(X\)</span> and <span class="math inline">\(X&#39;\)</span> have the same distributions, care should be taken so that the faster direction for simulation is used.</p>
+<pre class="r"><code>library(&#39;microbenchmark&#39;)
+res &lt;- microbenchmark(
+A &lt;- rmatrixt(500, df = 5, mean = matrix(0, nrow = 2, ncol = 20)),
+A &lt;- rmatrixt(500, df = 5, mean = matrix(0, nrow = 20, ncol = 2))
+)
+print(res)</code></pre>
+<pre><code>## Unit: milliseconds
+##                                                               expr
+##  A &lt;- rmatrixt(500, df = 5, mean = matrix(0, nrow = 2, ncol = 20))
+##  A &lt;- rmatrixt(500, df = 5, mean = matrix(0, nrow = 20, ncol = 2))
+##        min        lq     mean   median        uq      max neval
+##   8.142352  8.283564  8.54300  8.37986  8.478347 12.59635   100
+##  26.059652 26.761277 28.03682 26.89072 28.455555 39.65610   100</code></pre>
+<pre class="r"><code>library(&#39;ggplot2&#39;)
+autoplot(res) + theme_bw()</code></pre>
+<p><img src="/post/2018-02-23-why-don-t-my-results-agree-with-some-other-function_files/figure-html/benchmark-1.png" width="672" /></p>
+</div>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'>
+  <div class='categories'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/r'>R</a></div>
+<div class='tags'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/matrixdist'>Matrixdist</a>, <a class='tag' href='/tags/randomness'>Randomness</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/post/software-for-matrix-variate-lda-and-qda/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Software for Matrix Variate LDA and QDA</a>
+    </div></div>
+</nav>
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'>
+          <section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/gzt' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/gztstatistics' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:gzthompson@gmail.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/gzthompson' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section>
+
+          <div class='copyright'>
+  <p> &copy; 2018 g z thompson </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><div class='sidebar-overlay'></div><script src='/assets/js/main.89545a27.js'></script><script src='/js/custom.js'></script><script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+</body>
+
+</html>
+
