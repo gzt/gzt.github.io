@@ -20,6 +20,15 @@
     </item>
     
     <item>
+      <title>CholWishart now on CRAN</title>
+      <link>http://gzt.github.io/post/cholwishart-now-on-cran/</link>
+      <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/post/cholwishart-now-on-cran/</guid>
+      <description>I decided to break off from matrixdist the portion dedicated to the Wishart-related functions. They are self-contained and don’t really exist on their own elsewhere (there are a few that include them along with a lot of other functionality, some in C++ but a lot in R), so it’s good to have a little package that offers them on their own. Not everybody would want or need matrixdist and it’s good to offer the option without polluting the NAMESPACE.</description>
+    </item>
+    
+    <item>
       <title>Why don&#39;t my results agree with some other function?</title>
       <link>http://gzt.github.io/post/why-don-t-my-results-agree-with-some-other-function/</link>
       <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>

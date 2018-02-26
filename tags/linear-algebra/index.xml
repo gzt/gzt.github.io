@@ -5,10 +5,19 @@
     <link>http://gzt.github.io/tags/linear-algebra/</link>
     <description>Recent content in Linear algebra on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 20 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gzt.github.io/tags/linear-algebra/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CholWishart now on CRAN</title>
+      <link>http://gzt.github.io/post/cholwishart-now-on-cran/</link>
+      <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/post/cholwishart-now-on-cran/</guid>
+      <description>I decided to break off from matrixdist the portion dedicated to the Wishart-related functions. They are self-contained and don’t really exist on their own elsewhere (there are a few that include them along with a lot of other functionality, some in C++ but a lot in R), so it’s good to have a little package that offers them on their own. Not everybody would want or need matrixdist and it’s good to offer the option without polluting the NAMESPACE.</description>
+    </item>
     
     <item>
       <title>Notes on Discriminant Analysis for Matrix Variate Distributions</title>
