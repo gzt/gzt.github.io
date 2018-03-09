@@ -5,11 +5,11 @@
   <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'>
 <meta name='description' content='I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
-library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;) $mean [,1] [,2] [,3] [,4] [1,] 0.07425945 -0.1277509 -0.15602140 0.5687155 [2,] 0.09761592 -0.1253225 -0.10766017 0.'>
+library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;) $mean [,1] [,2] [,3] [,4] [1,] -0.14927218 0.14837747 -0.12314591 0.2203576 [2,] 0.03791425 0.00645731 -0.05735620 0.'>
 
 <meta property='og:title' content='Matrixdist News • gzt does statistics'>
 <meta property='og:description' content='I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in matrixdist. This means I may submit it to CRAN soon (it’s currently available on github). An example:
-library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;) $mean [,1] [,2] [,3] [,4] [1,] 0.07425945 -0.1277509 -0.15602140 0.5687155 [2,] 0.09761592 -0.1253225 -0.10766017 0.'>
+library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1]) MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;) $mean [,1] [,2] [,3] [,4] [1,] -0.14927218 0.14837747 -0.12314591 0.2203576 [2,] 0.03791425 0.00645731 -0.05735620 0.'>
 <meta property='og:url' content='http://gzt.github.io/post/matrixdist-new/'>
 <meta property='og:site_name' content='gzt does statistics'>
 <meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='R'><meta property='article:tag' content='matrixdist'><meta property='article:published_time' content='2018-02-16T00:00:00Z'/><meta property='article:modified_time' content='2018-02-16T00:00:00Z'/><meta name='twitter:card' content='summary'>
@@ -63,19 +63,25 @@ library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toepl
       </li><li>
         <a href='/tags/classification' style='font-size:1.25em'>Classification</a>
       </li><li>
+        <a href='/tags/ethics' style='font-size:1em'>Ethics</a>
+      </li><li>
         <a href='/tags/ggplot2' style='font-size:1em'>Ggplot2</a>
       </li><li>
         <a href='/tags/graphics' style='font-size:1em'>Graphics</a>
       </li><li>
-        <a href='/tags/linear-algebra' style='font-size:1.25em'>Linear algebra</a>
+        <a href='/tags/linear-algebra' style='font-size:1.5em'>Linear algebra</a>
       </li><li>
         <a href='/tags/matrix-variate' style='font-size:1.25em'>Matrix variate</a>
       </li><li>
-        <a href='/tags/matrixdist' style='font-size:1.5em'>Matrixdist</a>
+        <a href='/tags/matrixdist' style='font-size:1.75em'>Matrixdist</a>
       </li><li>
         <a href='/tags/optimization' style='font-size:1.25em'>Optimization</a>
       </li><li>
         <a href='/tags/profiling' style='font-size:1.25em'>Profiling</a>
+      </li><li>
+        <a href='/tags/randomness' style='font-size:1em'>Randomness</a>
+      </li><li>
+        <a href='/tags/social-responsibility' style='font-size:1em'>Social responsibility</a>
       </li></ul>
 </div>
 
@@ -170,35 +176,35 @@ library(matrixdist) A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toepl
 A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1])
 MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;)</code></pre>
 <pre><code>$mean
-           [,1]       [,2]        [,3]      [,4]
-[1,] 0.07425945 -0.1277509 -0.15602140 0.5687155
-[2,] 0.09761592 -0.1253225 -0.10766017 0.2535468
-[3,] 0.13562486 -0.2465561 -0.06357124 0.2790545
+            [,1]        [,2]        [,3]      [,4]
+[1,] -0.14927218  0.14837747 -0.12314591 0.2203576
+[2,]  0.03791425  0.00645731 -0.05735620 0.3784914
+[3,]  0.01535545 -0.08127382 -0.03381158 0.2619816
 
 $U
           [,1]      [,2]      [,3]
-[1,] 1.0000000 0.7915968 0.6266255
-[2,] 0.7915968 1.0000000 0.7915968
-[3,] 0.6266255 0.7915968 1.0000000
+[1,] 1.0000000 0.7866886 0.6188790
+[2,] 0.7866886 1.0000000 0.7866886
+[3,] 0.6188790 0.7866886 1.0000000
 
 $V
-           [,1]      [,2]       [,3]       [,4]
-[1,]  1.0000000 -1.214127 -0.3779589  1.2365371
-[2,] -1.2141270  1.825120  0.5151700 -1.3393436
-[3,] -0.3779589  0.515170  0.3699613 -0.5547584
-[4,]  1.2365371 -1.339344 -0.5547584  4.9947452
+           [,1]       [,2]       [,3]       [,4]
+[1,]  1.0000000 -0.4236611  0.7437683 -0.3955942
+[2,] -0.4236611  2.2171441  0.1979485 -0.2037806
+[3,]  0.7437683  0.1979485  1.9569907 -1.2878996
+[4,] -0.3955942 -0.2037806 -1.2878996  2.2411468
 
 $var
-[1] 3.237086
+[1] 2.91058
 
 $iter
-[1] 17
+[1] 14
 
 $tol
-[1] 5.677275e-08
+[1] 8.02815e-08
 
 $logLik
-[1] -1808.526
+[1] -2149.492
 
 $convergence
 [1] TRUE

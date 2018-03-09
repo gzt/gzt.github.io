@@ -13,6 +13,21 @@
   </url>
   
   <url>
+    <loc>http://gzt.github.io/post/i-just-can-t-with-this-one/</loc>
+    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/post/cholwishart-now-on-cran/</loc>
+    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/post/why-don-t-my-results-agree-with-some-other-function/</loc>
+    <lastmod>2018-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://gzt.github.io/post/software-for-matrix-variate-lda-and-qda/</loc>
     <lastmod>2018-02-22T00:00:00+00:00</lastmod>
   </url>
@@ -43,13 +58,13 @@
   </url>
   
   <url>
-    <loc>http://gzt.github.io/categories/c/</loc>
+    <loc>http://gzt.github.io/tags/c/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/tags/c/</loc>
+    <loc>http://gzt.github.io/categories/c/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -67,6 +82,12 @@
   </url>
   
   <url>
+    <loc>http://gzt.github.io/tags/ethics/</loc>
+    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://gzt.github.io/tags/ggplot2/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -80,7 +101,7 @@
   
   <url>
     <loc>http://gzt.github.io/tags/linear-algebra/</loc>
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -92,7 +113,7 @@
   
   <url>
     <loc>http://gzt.github.io/tags/matrixdist/</loc>
-    <lastmod>2018-02-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-02-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -104,7 +125,7 @@
   
   <url>
     <loc>http://gzt.github.io/post/</loc>
-    <lastmod>2018-02-22T00:00:00+00:00</lastmod>
+    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -115,14 +136,32 @@
   </url>
   
   <url>
-    <loc>http://gzt.github.io/categories/r/</loc>
-    <lastmod>2018-02-22T00:00:00+00:00</lastmod>
+    <loc>http://gzt.github.io/tags/r/</loc>
+    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/tags/r/</loc>
-    <lastmod>2018-02-20T00:00:00+00:00</lastmod>
+    <loc>http://gzt.github.io/categories/r/</loc>
+    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/tags/randomness/</loc>
+    <lastmod>2018-02-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/categories/science/</loc>
+    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/tags/social-responsibility/</loc>
+    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

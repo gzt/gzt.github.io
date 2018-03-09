@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ethics on gzt does statistics</title>
+    <link>http://gzt.github.io/tags/ethics/</link>
+    <description>Recent content in Ethics on gzt does statistics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 08 Mar 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://gzt.github.io/tags/ethics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I just can&#39;t with this one</title>
+      <link>http://gzt.github.io/post/i-just-can-t-with-this-one/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/post/i-just-can-t-with-this-one/</guid>
+      <description>As scientists, we have ethical responsibilities related to the uses of our work, and sometimes these are not entirely obvious. We have to at least pretend to think about them. If our work is “basic” research, we can claim moral ambiguity sometimes (whether such claims are justified is an empirical question). If our work is “applied”, we have little cover.
+When I read articles about uncritical applications of “machine learning” to “social issues”, I just can’t handle it.</description>
+    </item>
+    
+  </channel>
+</rss>
