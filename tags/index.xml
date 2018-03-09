@@ -109,6 +109,7 @@
       <description></description>
     </item>
     
+<<<<<<< HEAD
     <item>
       <title>Randomness</title>
       <link>http://gzt.github.io/tags/randomness/</link>
@@ -127,5 +128,17 @@
       <description></description>
     </item>
     
+||||||| merged common ancestors
+=======
+    <item>
+      <title>Randomness</title>
+      <link>http://gzt.github.io/tags/randomness/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/tags/randomness/</guid>
+      <description></description>
+    </item>
+    
+>>>>>>> 9aaa9ac341ebe55b359b1e22e3baffe9cd0d692f
   </channel>
 </rss>
