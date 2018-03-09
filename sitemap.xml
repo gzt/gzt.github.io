@@ -13,7 +13,6 @@
   </url>
   
   <url>
-<<<<<<< HEAD
     <loc>http://gzt.github.io/post/i-just-can-t-with-this-one/</loc>
     <lastmod>2018-03-08T00:00:00+00:00</lastmod>
   </url>
@@ -29,19 +28,6 @@
   </url>
   
   <url>
-||||||| merged common ancestors
-=======
-    <loc>http://gzt.github.io/post/cholwishart-now-on-cran/</loc>
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/post/why-don-t-my-results-agree-with-some-other-function/</loc>
-    <lastmod>2018-02-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
->>>>>>> 9aaa9ac341ebe55b359b1e22e3baffe9cd0d692f
     <loc>http://gzt.github.io/post/software-for-matrix-variate-lda-and-qda/</loc>
     <lastmod>2018-02-22T00:00:00+00:00</lastmod>
   </url>
@@ -139,13 +125,7 @@
   
   <url>
     <loc>http://gzt.github.io/post/</loc>
-<<<<<<< HEAD
     <lastmod>2018-03-08T00:00:00+00:00</lastmod>
-||||||| merged common ancestors
-    <lastmod>2018-02-22T00:00:00+00:00</lastmod>
-=======
-    <lastmod>2018-02-26T00:00:00+00:00</lastmod>
->>>>>>> 9aaa9ac341ebe55b359b1e22e3baffe9cd0d692f
     <priority>0</priority>
   </url>
   
@@ -182,12 +162,6 @@
   <url>
     <loc>http://gzt.github.io/tags/social-responsibility/</loc>
     <lastmod>2018-03-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/randomness/</loc>
-    <lastmod>2018-02-23T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
