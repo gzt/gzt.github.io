@@ -20,6 +20,16 @@
     </item>
     
     <item>
+      <title>New Version of CholWishart Released</title>
+      <link>http://gzt.github.io/post/new-version-of-cholwishart-released/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/post/new-version-of-cholwishart-released/</guid>
+      <description>I have just released version 0.9.4 of CholWishart. If you want to simulate from the inverse Wishart, compute densities for the Wishart or inverse Wishart, or use the multivariate gamma or digamma function, this is the R package for you. It has a few other functions (notably, its namesake which generates random samples from the Wishart distribution and returns their Cholesky decomposition).
+New in this release: the pseudo Wishart and its pseudo-inverse, the generalized inverse Wishart.</description>
+    </item>
+    
+    <item>
       <title>I just can&#39;t with this one</title>
       <link>http://gzt.github.io/post/i-just-can-t-with-this-one/</link>
       <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
@@ -103,15 +113,6 @@ library(matrixdist) A &amp;lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = t
       <guid>http://gzt.github.io/post/some-linear-algebra-tricks/</guid>
       <description>You may have come across some of this before, but I wanted to write this down for some future reference because it came up in a project of mine and I want to refer to it later. The general theme is that if you know something about the structure of the matrices you’re working with, you can sometimes speed some things up.
 Avoiding matrix inversion. Why do you want to invert your matrix?</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://gzt.github.io/post/2019-01-08-new-version-of-cholwishart-released/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/post/2019-01-08-new-version-of-cholwishart-released/</guid>
-      <description>New Version of CholWishart Released       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
   </channel>

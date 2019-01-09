@@ -5,7 +5,7 @@
     <link>http://gzt.github.io/tags/</link>
     <description>Recent content in Tags on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gzt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>C</title>
       <link>http://gzt.github.io/tags/c/</link>
-      <pubDate>Tue, 13 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>http://gzt.github.io/tags/c/</guid>
       <description></description>
@@ -58,7 +58,7 @@
     <item>
       <title>Linear algebra</title>
       <link>http://gzt.github.io/tags/linear-algebra/</link>
-      <pubDate>Mon, 26 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>http://gzt.github.io/tags/linear-algebra/</guid>
       <description></description>
@@ -67,7 +67,7 @@
     <item>
       <title>Matrix variate</title>
       <link>http://gzt.github.io/tags/matrix-variate/</link>
-      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>http://gzt.github.io/tags/matrix-variate/</guid>
       <description></description>
@@ -79,6 +79,15 @@
       <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gzt.github.io/tags/matrixdist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Multivariate</title>
+      <link>http://gzt.github.io/tags/multivariate/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/tags/multivariate/</guid>
       <description></description>
     </item>
     
@@ -103,7 +112,7 @@
     <item>
       <title>R</title>
       <link>http://gzt.github.io/tags/r/</link>
-      <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
       
       <guid>http://gzt.github.io/tags/r/</guid>
       <description></description>
@@ -124,6 +133,15 @@
       <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://gzt.github.io/tags/social-responsibility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wishart</title>
+      <link>http://gzt.github.io/tags/wishart/</link>
+      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/tags/wishart/</guid>
       <description></description>
     </item>
     
