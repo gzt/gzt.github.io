@@ -55,11 +55,13 @@
 
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
-        <a href='/tags/c' style='font-size:1em'>C</a>
+        <a href='/tags/c' style='font-size:1.1428571428571428em'>C</a>
       </li><li>
         <a href='/tags/r' style='font-size:2em'>R</a>
       </li><li>
-        <a href='/tags/classification' style='font-size:1.25em'>Classification</a>
+        <a href='/tags/wishart' style='font-size:1.2857142857142856em'>Wishart</a>
+      </li><li>
+        <a href='/tags/classification' style='font-size:1.1428571428571428em'>Classification</a>
       </li><li>
         <a href='/tags/ethics' style='font-size:1em'>Ethics</a>
       </li><li>
@@ -67,15 +69,17 @@
       </li><li>
         <a href='/tags/graphics' style='font-size:1em'>Graphics</a>
       </li><li>
-        <a href='/tags/linear-algebra' style='font-size:1.5em'>Linear algebra</a>
+        <a href='/tags/linear-algebra' style='font-size:1.5714285714285714em'>Linear algebra</a>
       </li><li>
-        <a href='/tags/matrix-variate' style='font-size:1.25em'>Matrix variate</a>
+        <a href='/tags/matrix-variate' style='font-size:1.4285714285714286em'>Matrix variate</a>
       </li><li>
-        <a href='/tags/matrixdist' style='font-size:1.75em'>Matrixdist</a>
+        <a href='/tags/matrixdist' style='font-size:1.4285714285714286em'>Matrixdist</a>
       </li><li>
-        <a href='/tags/optimization' style='font-size:1.25em'>Optimization</a>
+        <a href='/tags/multivariate' style='font-size:1.1428571428571428em'>Multivariate</a>
       </li><li>
-        <a href='/tags/profiling' style='font-size:1.25em'>Profiling</a>
+        <a href='/tags/optimization' style='font-size:1.1428571428571428em'>Optimization</a>
+      </li><li>
+        <a href='/tags/profiling' style='font-size:1.2857142857142856em'>Profiling</a>
       </li><li>
         <a href='/tags/randomness' style='font-size:1em'>Randomness</a>
       </li><li>
@@ -169,7 +173,11 @@ One min read
   
 
   <div class='container entry-content'>
-  <p>I decided to break off from <code>matrixdist</code> the portion dedicated to the Wishart-related functions. They are self-contained and don’t really exist on their own elsewhere (there are a few that include them along with a lot of other functionality, some in C++ but a lot in R), so it’s good to have a little package that offers them on their own. Not everybody would want or need <code>matrixdist</code> and it’s good to offer the option without polluting the <code>NAMESPACE</code>.</p>
+  <p>I decided to break off from <code>matrixdist</code> the portion dedicated to the Wishart-related functions.
+They are self-contained and don’t really exist on their own elsewhere (there are a few that include
+them along with a lot of other functionality, some in C++ but a lot in R), so it’s good to have a little
+package that offers them on their own. Not everybody would want or need <code>matrixdist</code> and it’s good to
+offer the option without polluting the <code>NAMESPACE</code>.</p>
 <p>The package offers:</p>
 <ul>
 <li>Sampling from the Cholesky factorization of a Wishart distribution.</li>
@@ -178,7 +186,8 @@ One min read
 <li>Density function for the Wishart and inverse Wishart distributions.</li>
 <li>Multivariate gamma and digamma functions.</li>
 </ul>
-<p>The sampling functions are in C and are based on the function <code>stats::rWishart()</code> so they are roughly as fast.</p>
+<p>The sampling functions are in C and are based on the function <code>stats::rWishart()</code> so they are
+roughly as fast.</p>
 <pre class="r"><code>set.seed(20180226)
 sigma &lt;- rWishart(1, 10, diag(6))[,,1]
 args &lt;- list(n = 10000, df = 10, Sigma = sigma)
@@ -284,7 +293,7 @@ autoplot(results)+theme_bw()</code></pre>
 </svg>
 </a>
       </li><li>
-        <a href='https://linkedin.com/in/gzthompson' target='_blank' rel='noopener'>
+        <a href='https://linkedin.com/in/geoffreyzthompson' target='_blank' rel='noopener'>
           <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
   
   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
@@ -298,7 +307,7 @@ autoplot(results)+theme_bw()</code></pre>
 </section>
 
           <div class='copyright'>
-  <p> &copy; 2018 g z thompson </p>
+  <p> &copy; 2018-2019 g z thompson </p>
 </div>
 
         </div>
