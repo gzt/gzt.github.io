@@ -5,10 +5,20 @@
     <link>http://gzt.github.io/tags/r/</link>
     <description>Recent content in R on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gzt.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Know your PRNGs</title>
+      <link>http://gzt.github.io/post/know-your-prngs/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/post/know-your-prngs/</guid>
+      <description>TL;DR version: if all you&amp;rsquo;re using the standalone R math library in C for is generating uniform random numbers, I have a little C program to remove that dependency as long as you don&amp;rsquo;t mind your seeds not having the same output as R. I might even fix that later.
+I fell into a rabbit hole recently - I do a fair amount of work in C using the R standalone math library for pseudo-random number generation (PRNGs) and sometimes some of its special functions (rather than, say, working in C so it will be called from R or trying to implement a PRNG myself or a special function myself - leave RNGs and numerical analysis to experts).</description>
+    </item>
     
     <item>
       <title>A Quick Note about rInvWishart in CholWishart</title>

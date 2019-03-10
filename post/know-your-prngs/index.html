@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='TL;DR version: if all you&rsquo;re using the standalone R math library in C for is generating uniform random numbers, I have a little C program to remove that dependency as long as you don&rsquo;t mind your seeds not having the same output as R. I might even fix that later.
+I fell into a rabbit hole recently - I do a fair amount of work in C using the R standalone math library for pseudo-random number generation (PRNGs) and sometimes some of its special functions (rather than, say, working in C so it will be called from R or trying to implement a PRNG myself or a special function myself - leave RNGs and numerical analysis to experts).'>
+
+<meta property='og:title' content='Know your PRNGs • gzt does statistics'>
+<meta property='og:description' content='TL;DR version: if all you&rsquo;re using the standalone R math library in C for is generating uniform random numbers, I have a little C program to remove that dependency as long as you don&rsquo;t mind your seeds not having the same output as R. I might even fix that later.
+I fell into a rabbit hole recently - I do a fair amount of work in C using the R standalone math library for pseudo-random number generation (PRNGs) and sometimes some of its special functions (rather than, say, working in C so it will be called from R or trying to implement a PRNG myself or a special function myself - leave RNGs and numerical analysis to experts).'>
+<meta property='og:url' content='http://gzt.github.io/post/know-your-prngs/'>
+<meta property='og:site_name' content='gzt does statistics'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='R'><meta property='article:tag' content='statistics'><meta property='article:tag' content='computing'><meta property='article:published_time' content='2019-03-09T00:00:00Z'/><meta property='article:modified_time' content='2019-03-09T00:00:00Z'/><meta name='twitter:card' content='summary'>
+
+<meta name="generator" content="Hugo 0.36" />
+
+  <title>Know your PRNGs • gzt does statistics</title>
+  <link rel='canonical' href='http://gzt.github.io/post/know-your-prngs/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.22d77285.css'><link rel='stylesheet' href='/css/custom.css'>
+</head>
+
+
+<body class='page type-post has-sidebar sidebar-sticky'>
+
+  <div class='site'>
+
+    <a class='screen-reader-text' href='#main-menu'>Skip to Main Menu</a>
+
+<div id='sidebar' class='sidebar'>
+  <div class='container'><section class='widget widget-about sep-after'>
+  <header>
+    
+    <div class='logo'>
+      <a href='/'>
+        <img src='/2553342.jpg'>
+      </a>
+    </div>
+    
+    <h2 class='title site-title '>
+    gzt does statistics
+    </h2>
+    <div class='desc'>
+    inverted matrix variate gzt distribution
+    </div>
+  </header>
+
+</section>
+<section class='widget widget-taxonomy_cloud sep-after'>
+  <header>
+    <h4 class='title widget-title'>Tags</h4>
+  </header>
+
+  <div class='container list-container'>
+  <ul class='list taxonomy-cloud'><li>
+        <a href='/tags/c' style='font-size:1.125em'>C</a>
+      </li><li>
+        <a href='/tags/r' style='font-size:2em'>R</a>
+      </li><li>
+        <a href='/tags/wishart' style='font-size:1.25em'>Wishart</a>
+      </li><li>
+        <a href='/tags/classification' style='font-size:1.125em'>Classification</a>
+      </li><li>
+        <a href='/tags/computing' style='font-size:1em'>Computing</a>
+      </li><li>
+        <a href='/tags/ethics' style='font-size:1em'>Ethics</a>
+      </li><li>
+        <a href='/tags/ggplot2' style='font-size:1em'>Ggplot2</a>
+      </li><li>
+        <a href='/tags/graphics' style='font-size:1em'>Graphics</a>
+      </li><li>
+        <a href='/tags/linear-algebra' style='font-size:1.5em'>Linear algebra</a>
+      </li><li>
+        <a href='/tags/matrix-variate' style='font-size:1.375em'>Matrix variate</a>
+      </li><li>
+        <a href='/tags/matrixdist' style='font-size:1.375em'>Matrixdist</a>
+      </li><li>
+        <a href='/tags/multivariate' style='font-size:1.125em'>Multivariate</a>
+      </li><li>
+        <a href='/tags/optimization' style='font-size:1.125em'>Optimization</a>
+      </li><li>
+        <a href='/tags/profiling' style='font-size:1.25em'>Profiling</a>
+      </li><li>
+        <a href='/tags/randomness' style='font-size:1em'>Randomness</a>
+      </li><li>
+        <a href='/tags/social-responsibility' style='font-size:1em'>Social responsibility</a>
+      </li><li>
+        <a href='/tags/statistics' style='font-size:1em'>Statistics</a>
+      </li></ul>
+</div>
+
+
+</section>
+</div>
+</div>
+
+    <div class='main'>
+
+      <nav id='main-menu' class='main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    <a class='screen-reader-text' href='#content'>Skip to Content</a>
+
+<button id='sidebar-toggler' class='hamburger hamburger--arrow sidebar-toggler' type='button' aria-controls='sidebar' aria-expanded='false'>
+  <span class='screen-reader-text'>Toggle Sidebar</span>
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+</button>
+    <ul><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/about/'>About</a>
+      </li><li class='item'>
+        <a href='https://github.com/gzt/'>Repo</a>
+      </li><li class='item'>
+        <a href='/categories/'>Categories</a>
+      </li><li class='item'>
+        <a href='/tags/'>Tags</a>
+      </li></ul>
+  </div>
+</nav>
+
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>gzt does statistics</p><p class='desc site-desc'>inverted matrix variate gzt distribution</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Know your PRNGs</h1>
+      
+
+    </div>
+    
+<div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2019-03-09T00:00:00Z'>2019, Mar 09</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+9 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  
+
+<p>TL;DR version: if all you&rsquo;re using the standalone <code>R</code> math library in C for is generating uniform
+random numbers, I have a <a href="https://github.com/gzt/replaceR" target="_blank">little C program</a> to remove
+that dependency as long as you don&rsquo;t mind your seeds not having the same output as <code>R</code>. I might
+even fix that later.</p>
+
+<p>I fell into a rabbit hole recently - I do a fair amount of work in C using the <code>R</code> standalone math
+library for pseudo-random number generation (PRNGs) and sometimes some of its special functions
+(rather than, say, working in C so it will be called from <code>R</code> or trying to implement a PRNG
+myself or a special function myself - leave RNGs and numerical analysis to experts). The usage is
+fairly simple - you call the standalone library, initialize your PRNG with <code>set_seed(seed1, seed2)</code>
+ (this deserves some discussion, maybe later, it is an important topic),
+ then go ahead and call <code>runif()</code> or whatever other function you&rsquo;re interested in.
+ There are a few pitfalls but that&rsquo;s beyond the scope of this
+ post. Please feel free to reach out if you ever need help, though!</p>
+
+<p>Anyway, I&rsquo;ve been working on a cluster recently where it just seems to be a pain to get anything
+installed on there. Rather than sort all that out, I looked at my code and realized all I was
+doing in this set of programs with the <code>R</code> math library was calling <code>runif()</code>. So, what would it
+take to replace it? I was simply using the default and I didn&rsquo;t need perfect replication -
+that is to say, I didn&rsquo;t need to get the same results as <code>R</code> with the same seeds, I just needed
+to be able to reproduce results if desired. I also want to be able to go back to the &ldquo;real&rdquo;
+library if I need something more than just the PRNG, so I only want to have to change a line
+or two in a header to switch.</p>
+
+<p>So, what do I need to do?</p>
+
+<ol>
+<li>Find out what PRNG is used by default for <code>runif()</code> and how it is implemented. Hopefully
+the C code in the the library is not too heavily <code>SEXP</code>ed up or not too different from the
+reference implementation of the method. I&rsquo;m an okay programmer but these are things that you
+don&rsquo;t want to mess with.</li>
+<li>Find out how <code>set_seed()</code> and initialization work and write a replacement function.</li>
+<li>Put it into my own code.</li>
+</ol>
+
+<h2 id="so-what-prng-are-we-using-anyway">So what PRNG are we using anyway</h2>
+
+<p>The helpful <code>R</code> documentation says the default method is the
+<a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html" target="_blank">Mersenne Twister</a>
+algorithm, which seems to be a <em>de facto</em> standard. The reference implementation is in
+<a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/CODES/mt19937ar.c" target="_blank">pretty clean C code</a> and seems fairly straightforward. Neat! There&rsquo;s a little warning on the site that
+old methods of initialization aren&rsquo;t so good, so we&rsquo;ll have to see what <code>R</code> is doing and
+be careful when deciding what to do ourselves. In the future I might want to replicate the
+other methods that <code>R</code> offers but that adds some overhead.</p>
+
+<p>Now to check the <code>R</code> code to <a href="https://svn.r-project.org/R/trunk/src/main/RNG.c" target="_blank">see how they implement this</a>.
+They have a helpful comment about what they&rsquo;re doing.</p>
+
+<pre><code>
+/* ===================  Mersenne Twister ========================== */
+/* From http://www.math.keio.ac.jp/~matumoto/emt.html */
+/* New URL (accessed 2018-11-08):
+   http://www.math.sci.hiroshima-u.ac.jp/~m-mat/eindex.html
+
+   The initialization method in the 1998 code and paper had a minor
+   issue that was addressed with new initialization approaches in an
+   update in 2002.  R has always used a different initialization
+   approach and is not affected by that issue.
+*/
+
+/* A C-program for MT19937: Real number version([0,1)-interval)
+   (1999/10/28)
+     genrand() generates one pseudorandom real number (double)
+   which is uniformly distributed on [0,1)-interval, for each
+   call. sgenrand(seed) sets initial values to the working area
+   of 624 words. Before genrand(), sgenrand(seed) must be
+   called once. (seed is any 32-bit integer.)
+   Integer generator is obtained by modifying two lines.
+     Coded by Takuji Nishimura, considering the suggestions by
+   Topher Cooper and Marc Rieffel in July-Aug. 1997.
+
+   Copyright (C) 1997, 1999 Makoto Matsumoto and Takuji Nishimura.
+   When you use this, send an email to: matumoto@math.keio.ac.jp
+   with an appropriate reference to your work.
+
+   REFERENCE
+   M. Matsumoto and T. Nishimura,
+   &quot;Mersenne Twister: A 623-Dimensionally Equidistributed Uniform
+   Pseudo-Random Number Generator&quot;,
+   ACM Transactions on Modeling and Computer Simulation,
+   Vol. 8, No. 1, January 1998, pp 3--30.
+*/
+</code></pre>
+
+<p>Nice, we don&rsquo;t need to worry about their initialization being out of date.
+Looking at their code, it looks like a simple port of the standard implementation.
+This is a relief, as I do not want to have to do any real coding. One nice thing:
+They change a division into a multiplication.</p>
+
+<pre><code>    return ( (double)y * 2.3283064365386963e-10 ); /* reals: [0,1)-interval */
+</code></pre>
+
+<p>Maybe it doesn&rsquo;t matter in the end. #1 is done: the library&rsquo;s algorithm isn&rsquo;t really
+different from the reference implementation.</p>
+
+<p>An important note here: a typical PRNG will generate a unsigned 32-bit <code>int</code> with approximately
+uniform distribution in its range. <code>R</code> takes that <code>int</code> and turns it into a uniform <code>\([0,1)\)</code> by
+dividing by <code>\(2^32\)</code>. It uses these uniform values to generate other random variables and perform
+sampling. Frankly, you might want to uniformly sample from a large set of integers more
+efficiently than that or generate uniform <code>double</code>s with more precision, so we might look into
+that. <code>R</code> has recently <a href="http://r.789695.n4.nabble.com/Bias-in-R-s-random-integers-td4752563.html" target="_blank">begun fixing their default for sampling</a>
+from large sets of integers, so that&rsquo;s good.</p>
+
+<h2 id="initialization-in-r">Initialization in R</h2>
+
+<p>Pseudo-random number generators have some stored <em>state</em> and then they have two parts:</p>
+
+<ol>
+<li>Generating the next state.</li>
+<li>Generating the next random number from the state.</li>
+</ol>
+
+<p>Many generators put all their work in one or the other of these steps. If you know the state,
+you know the entire future of the PRNG. If there is an easy function for inverting step 2,
+you can find out the state of the PRNG by observing enough random numbers.
+The Mersenne Twister has a state that is 623-dimensional and you obtain the next random number
+by reading the next entry of the state (ie, step 2 is simply the identity).
+When you have gone through all 623 entries, it
+generates a new state (ie 623 new random numbers). The other PRNGs in <code>R</code> have smaller states.
+However, you do not provide <code>R</code> with 623 32-bit integers, you provide it with 1 in <code>R</code>
+itself or 2 when calling it from C. So, what are we doing?</p>
+
+<p>In looking at the code, they aren&rsquo;t using the outdated initialization which the authors
+of the MT algorithm warn against. It <em>looks</em> like they initialize by using the good ol&rsquo;
+LCG (with a multiplier of <code>69069</code>, nice) with whatever (one) seed is provided to fill out
+the state space and then generate a new state based on that.
+It also looks like, correct me if I&rsquo;m wrong, only one of the two
+seeds passed to <code>R</code> from <code>set_seed()</code> in C is used for initializing <code>runif()</code> with MT.
+This is not exposed to the user. This could be an issue for some, as, like,
+this means there are only <code>2^32</code> possible initializations in <code>R</code>, but it&rsquo;s not a big problem.
+However, what are the odds we&rsquo;ll be providing an actual 32 bits of entropy to the generator?
+It would be nice to be able to add in more entropy! The reference implementation also provides
+a method for initializing with an arbitrary array of values. This is good.</p>
+
+<p>Setting the seed can be a real issue if you want a reproducible simulation and/or are running a
+lot of simulations (say, you&rsquo;re operating in parallel). If you don&rsquo;t care about reproducing
+your work and are only running one simulation, you can let <code>R</code> do its thing if you&rsquo;re working
+interactively or, if you&rsquo;re in C, you can use some tried-and-true methods like generating
+something based on the time or your process ID or some hardware source or entropy. If you&rsquo;re
+doing something just for demonstration purposes and want to also provide some kind of time stamp,
+I like to make a seed based on the date (<code>20190310</code> for today, for instance). When running
+things in parallel, whether you want it to be completely reproducible or not, initialization is
+going to require some care - basing something on the time is usually okay but if you&rsquo;re starting
+a bunch of processes in near proximity to each other, there&rsquo;s a possibility of collisions and
+you have to consider how the nearness of seeds is related to the results of your PRNG even if
+they don&rsquo;t collide (spoiler: for some, including MT, this is a big problem).</p>
+
+<p>All this to say: I made this take both provided seeds in <code>set_seed()</code> into account as well as
+provided a method for using the <code>init_by_array()</code> function. I also included a function that
+will initialize based on a hash of the arguments provided to call the program. This is handy
+for me because I will often run several copies of the same program with only minor changes
+in the arguments but I also want the results to be reproducible (at least while testing).
+The hash makes it so that each program will have a rather different seed even with only a
+minor change in the arguments but will have the same seed if I run it again with the exact
+same arguments.</p>
+
+<h2 id="using-this">Using This</h2>
+
+<p>Include the header for <code>mt19337</code> and <code>replaceR</code> and you can use <code>set_seed</code> and <code>runif</code> just as
+you did before. I provide a set of
+<a href="https://github.com/gzt/replaceR/blob/master/ReplaceResults.txt" target="_blank">reference results</a> to check
+whether your installation is working.</p>
+
+<p>You can compile and run the example file here:</p>
+
+<pre><code>gcc mt19937ar.c replaceR.c testreplaceR.c -o testreplaceR
+./testreplaceR
+</code></pre>
+
+<p>To initialize with a hash of the arguments, you can call <code>hash_init_rand(argc, argv)</code> or
+if you are combining it with a set of seeds, <code>hash_set_seed(argc, argv, seed1, seed2)</code>.
+As written, these are like the reference implementation and the library in that they use
+global variables for state. You can get around this.</p>
+
+<h2 id="future-thoughts">Future thoughts</h2>
+
+<p>The MT random number generator has a few difficulties: it fails statistical tests, has a
+large state, has problems when it comes to seeds that differ very little (problem for parallelism), and is slow for what it gives you. Also, observing a few hundred draws will
+tell you everything you need to know about the state, which you may or may not care about.</p>
+
+<p>There are other PRNGs that may or may not have these problems. In the future, I&rsquo;ll talk about
+implementing them in <code>R</code> or what difficulties there are in doing that (I&rsquo;ve been looking at
+<a href="https://www.pcg-random.org" target="_blank">PCG</a>, for one).</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'>
+  <div class='categories'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/c'>C</a></div>
+<div class='tags'>
+  <span class='taxonomy-icon'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+</span>
+  <span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/r'>R</a>, <a class='tag' href='/tags/statistics'>Statistics</a>, <a class='tag' href='/tags/computing'>Computing</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/post/a-quick-note-about-rinvwishart-in-cholwishart/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>A Quick Note about rInvWishart in CholWishart</a>
+    </div></div>
+</nav>
+
+
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'>
+          <section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='https://github.com/gzt' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Github account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://twitter.com/gztstatistics' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Twitter account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='mailto:gzthompson@gmail.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/geoffreyzthompson' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section>
+
+          <div class='copyright'>
+  <p> &copy; 2018-2019 g z thompson </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><div class='sidebar-overlay'></div><script src='/assets/js/main.89545a27.js'></script><script src='/js/custom.js'></script><script src="//yihui.name/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script async src="//yihui.name/js/center-img.js"></script>
+</body>
+
+</html>
+
