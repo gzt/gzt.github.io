@@ -371,6 +371,19 @@ tell you everything you need to know about the state, which you may or may not c
 implementing them in <code>R</code> or what difficulties there are in doing that (I&rsquo;ve been looking at
 <a href="https://www.pcg-random.org" target="_blank">PCG</a>, for one).</p>
 
+<h2 id="footnote-marsaglia-multicarry">Footnote: Marsaglia Multicarry</h2>
+
+<p>It&rsquo;s pretty easy code, it fits on three lines:</p>
+
+<pre><code>  /* 0177777(octal) == 65535(decimal)*/
+      I1= 36969*(I1 &amp; 0177777) + (I1&gt;&gt;16);
+      I2= 18000*(I2 &amp; 0177777) + (I2&gt;&gt;16);
+      return fixup(((I1 &lt;&lt; 16)^(I2 &amp; 0177777)) * i2_32m1); /* in [0,1) */
+</code></pre>
+
+<p><code>I1</code> is one seed, <code>I2</code> is another seed, <code>i2_32m1</code> is <code>\(2^{32}-1\)</code>. Figuring out what&rsquo;s going on there is an
+exercise, I guess.</p>
+
 </div>
 
   
