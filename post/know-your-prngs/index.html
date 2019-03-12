@@ -218,13 +218,17 @@ don&rsquo;t want to mess with.</li>
 
 <h2 id="so-what-prng-are-we-using-anyway">So what PRNG are we using anyway</h2>
 
-<p>The helpful <code>R</code> documentation says the default method is the
+<p>The helpful <code>R</code> documentation says the default method in <code>R</code> is the
 <a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html" target="_blank">Mersenne Twister</a>
 algorithm, which seems to be a <em>de facto</em> standard. The reference implementation is in
 <a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/CODES/mt19937ar.c" target="_blank">pretty clean C code</a> and seems fairly straightforward. Neat! There&rsquo;s a little warning on the site that
 old methods of initialization aren&rsquo;t so good, so we&rsquo;ll have to see what <code>R</code> is doing and
 be careful when deciding what to do ourselves. In the future I might want to replicate the
 other methods that <code>R</code> offers but that adds some overhead.</p>
+
+<p>The default method for the <code>R</code> standalone library called from C, though is the Marsaglia Multicarry.
+I could implement that to completely duplicate the <code>Rmath.h</code> experience or I could duplicate the
+actual <code>R</code> experience. I&rsquo;m leaning toward the latter, as Marsaglia seems a little too easy!</p>
 
 <p>Now to check the <code>R</code> code to <a href="https://svn.r-project.org/R/trunk/src/main/RNG.c" target="_blank">see how they implement this</a>.
 They have a helpful comment about what they&rsquo;re doing.</p>
@@ -297,20 +301,21 @@ from large sets of integers, so that&rsquo;s good.</p>
 you know the entire future of the PRNG. If there is an easy function for inverting step 2,
 you can find out the state of the PRNG by observing enough random numbers.
 The Mersenne Twister has a state that is 623-dimensional and you obtain the next random number
-by reading the next entry of the state (ie, step 2 is simply the identity).
+by reading the next entry of the state and doing a simple, invertible function of it.
 When you have gone through all 623 entries, it
 generates a new state (ie 623 new random numbers). The other PRNGs in <code>R</code> have smaller states.
 However, you do not provide <code>R</code> with 623 32-bit integers, you provide it with 1 in <code>R</code>
-itself or 2 when calling it from C. So, what are we doing?</p>
+itself or 2 when calling it from C (note Marsaglia Multicarry has a state of size 2 and an identity function
+for step 2 as well). So, what are we doing?</p>
 
 <p>In looking at the code, they aren&rsquo;t using the outdated initialization which the authors
 of the MT algorithm warn against. It <em>looks</em> like they initialize by using the good ol&rsquo;
 LCG (with a multiplier of <code>69069</code>, nice) with whatever (one) seed is provided to fill out
 the state space and then generate a new state based on that.
-It also looks like, correct me if I&rsquo;m wrong, only one of the two
-seeds passed to <code>R</code> from <code>set_seed()</code> in C is used for initializing <code>runif()</code> with MT.
-This is not exposed to the user. This could be an issue for some, as, like,
-this means there are only <code>2^32</code> possible initializations in <code>R</code>, but it&rsquo;s not a big problem.
+<code>R</code> from <code>set_seed()</code> in C uses both values for initializing <code>runif()</code> with Marsaglia Multicarry,
+and perhaps we should want to emulate this behavior rather than consider how MT is initialized.
+For users of MT in R, this could be an issue for some, as, like,
+this means there are only <code>2^32</code> possible initializations, but it&rsquo;s not a big problem.
 However, what are the odds we&rsquo;ll be providing an actual 32 bits of entropy to the generator?
 It would be nice to be able to add in more entropy! The reference implementation also provides
 a method for initializing with an arbitrary array of values. This is good.</p>
@@ -358,12 +363,26 @@ global variables for state. You can get around this.</p>
 <h2 id="future-thoughts">Future thoughts</h2>
 
 <p>The MT random number generator has a few difficulties: it fails statistical tests, has a
-large state, has problems when it comes to seeds that differ very little (problem for parallelism), and is slow for what it gives you. Also, observing a few hundred draws will
+large state, has problems when it comes to seeds that differ very little (problem for parallelism),
+and is slow for what it gives you. Also, observing a few hundred draws will
 tell you everything you need to know about the state, which you may or may not care about.</p>
 
 <p>There are other PRNGs that may or may not have these problems. In the future, I&rsquo;ll talk about
 implementing them in <code>R</code> or what difficulties there are in doing that (I&rsquo;ve been looking at
 <a href="https://www.pcg-random.org" target="_blank">PCG</a>, for one).</p>
+
+<h2 id="footnote-marsaglia-multicarry">Footnote: Marsaglia Multicarry</h2>
+
+<p>It&rsquo;s pretty easy code, it fits on three lines:</p>
+
+<pre><code>  /* 0177777(octal) == 65535(decimal)*/
+      I1= 36969*(I1 &amp; 0177777) + (I1&gt;&gt;16);
+      I2= 18000*(I2 &amp; 0177777) + (I2&gt;&gt;16);
+      return fixup(((I1 &lt;&lt; 16)^(I2 &amp; 0177777)) * i2_32m1); /* in [0,1) */
+</code></pre>
+
+<p><code>I1</code> is one seed, <code>I2</code> is another seed, <code>i2_32m1</code> is <code>\(2^{32}-1\)</code>. Figuring out what&rsquo;s going on there is an
+exercise, I guess.</p>
 
 </div>
 
