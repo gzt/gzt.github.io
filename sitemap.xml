@@ -178,13 +178,21 @@
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>http://gzt.github.io/tags/r/</loc>
+=======
+    <loc>http://gzt.github.io/categories/r/</loc>
+>>>>>>> 80d373433b20e45a9df649ffbea3d87303934aee
     <lastmod>2019-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>http://gzt.github.io/categories/r/</loc>
+=======
+    <loc>http://gzt.github.io/tags/r/</loc>
+>>>>>>> 80d373433b20e45a9df649ffbea3d87303934aee
     <lastmod>2019-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
