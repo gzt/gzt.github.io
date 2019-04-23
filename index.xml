@@ -20,6 +20,27 @@
     </item>
     
     <item>
+      <title>Plotting a Monotonic Increasing Sequence</title>
+      <link>http://gzt.github.io/post/plotting-a-monotonic-increasing-sequence/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/post/plotting-a-monotonic-increasing-sequence/</guid>
+      <description>I recently had an issue where I wanted to plot a line connecting the monotonically increasing part of some subset of the data. So I figured I would try to make my own ggplot2 layer to do it.
+It’s actually pretty straightforward! The first step is to read the documentation for extending ggplot2. A helpful quote if you ever have impostor syndrome:
+ As you read this document, you’ll see many things that will make you scratch your head and wonder why on earth is it designed this way?</description>
+    </item>
+    
+    <item>
+      <title>The R Uncoast Unconference</title>
+      <link>http://gzt.github.io/post/the-r-uncoast-unconference/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/post/the-r-uncoast-unconference/</guid>
+      <description>Last week, I participated in the Uncoast Unconference, which was a great opportunity to catch up with some old colleagues, meet a bunch of new people, and collaborate on some interesting projects.
+The way these unconferences work, if you’re not familiar (I wasn’t, it was my first), is that people get together and decide on some project to work on (which can, hopefully, be finished in two days). Experience levels range from complete beginners to R Core contributors.</description>
+    </item>
+    
+    <item>
       <title>Know your PRNGs</title>
       <link>http://gzt.github.io/post/know-your-prngs/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>

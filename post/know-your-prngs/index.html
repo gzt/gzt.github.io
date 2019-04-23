@@ -12,7 +12,7 @@ I fell into a rabbit hole recently - I do a fair amount of work in C using the R
 I fell into a rabbit hole recently - I do a fair amount of work in C using the R standalone math library for pseudo-random number generation (PRNGs) and sometimes some of its special functions (rather than, say, working in C so it will be called from R or trying to implement a PRNG myself or a special function myself - leave RNGs and numerical analysis to experts).'>
 <meta property='og:url' content='http://gzt.github.io/post/know-your-prngs/'>
 <meta property='og:site_name' content='gzt does statistics'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='R'><meta property='article:tag' content='statistics'><meta property='article:tag' content='computing'><meta property='article:published_time' content='2019-03-09T00:00:00Z'/><meta property='article:modified_time' content='2019-03-09T00:00:00Z'/><meta name='twitter:card' content='summary'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post'><meta property='article:tag' content='R'><meta property='article:tag' content='statistics'><meta property='article:tag' content='computing'><meta property='article:published_time' content='2019-03-09T00:00:00Z'/><meta property='article:modified_time' content='2019-03-09T00:00:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@gztstatistics'>
 
 <meta name="generator" content="Hugo 0.36" />
 
@@ -57,39 +57,41 @@ I fell into a rabbit hole recently - I do a fair amount of work in C using the R
 
   <div class='container list-container'>
   <ul class='list taxonomy-cloud'><li>
-        <a href='/tags/c' style='font-size:1.125em'>C</a>
+        <a href='/tags/c' style='font-size:1.1em'>C</a>
       </li><li>
         <a href='/tags/r' style='font-size:2em'>R</a>
       </li><li>
-        <a href='/tags/wishart' style='font-size:1.25em'>Wishart</a>
+        <a href='/tags/wishart' style='font-size:1.2em'>Wishart</a>
       </li><li>
-        <a href='/tags/classification' style='font-size:1.125em'>Classification</a>
+        <a href='/tags/classification' style='font-size:1.1em'>Classification</a>
       </li><li>
         <a href='/tags/computing' style='font-size:1em'>Computing</a>
       </li><li>
         <a href='/tags/ethics' style='font-size:1em'>Ethics</a>
       </li><li>
-        <a href='/tags/ggplot2' style='font-size:1em'>Ggplot2</a>
+        <a href='/tags/ggplot2' style='font-size:1.1em'>Ggplot2</a>
       </li><li>
-        <a href='/tags/graphics' style='font-size:1em'>Graphics</a>
+        <a href='/tags/graphics' style='font-size:1.1em'>Graphics</a>
       </li><li>
-        <a href='/tags/linear-algebra' style='font-size:1.5em'>Linear algebra</a>
+        <a href='/tags/linear-algebra' style='font-size:1.4em'>Linear algebra</a>
       </li><li>
-        <a href='/tags/matrix-variate' style='font-size:1.375em'>Matrix variate</a>
+        <a href='/tags/matrix-variate' style='font-size:1.3em'>Matrix variate</a>
       </li><li>
-        <a href='/tags/matrixdist' style='font-size:1.375em'>Matrixdist</a>
+        <a href='/tags/matrixdist' style='font-size:1.3em'>Matrixdist</a>
       </li><li>
-        <a href='/tags/multivariate' style='font-size:1.125em'>Multivariate</a>
+        <a href='/tags/multivariate' style='font-size:1.1em'>Multivariate</a>
       </li><li>
-        <a href='/tags/optimization' style='font-size:1.125em'>Optimization</a>
+        <a href='/tags/optimization' style='font-size:1.1em'>Optimization</a>
       </li><li>
-        <a href='/tags/profiling' style='font-size:1.25em'>Profiling</a>
+        <a href='/tags/profiling' style='font-size:1.2em'>Profiling</a>
       </li><li>
         <a href='/tags/randomness' style='font-size:1em'>Randomness</a>
       </li><li>
         <a href='/tags/social-responsibility' style='font-size:1em'>Social responsibility</a>
       </li><li>
         <a href='/tags/statistics' style='font-size:1em'>Statistics</a>
+      </li><li>
+        <a href='/tags/unconference' style='font-size:1em'>Unconference</a>
       </li></ul>
 </div>
 
@@ -301,7 +303,7 @@ from large sets of integers, so that&rsquo;s good.</p>
 you know the entire future of the PRNG. If there is an easy function for inverting step 2,
 you can find out the state of the PRNG by observing enough random numbers.
 The Mersenne Twister has a state that is 623-dimensional and you obtain the next random number
-by reading the next entry of the state (ie, step 2 is simply the identity).
+by reading the next entry of the state and doing a simple, invertible function of it.
 When you have gone through all 623 entries, it
 generates a new state (ie 623 new random numbers). The other PRNGs in <code>R</code> have smaller states.
 However, you do not provide <code>R</code> with 623 32-bit integers, you provide it with 1 in <code>R</code>
@@ -424,6 +426,16 @@ exercise, I guess.</p>
 </svg>
  Previous</span>
         <span class='screen-reader-text'>Previous post: </span>A Quick Note about rInvWishart in CholWishart</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/post/the-r-uncoast-unconference/'>
+        <span class='screen-reader-text'>Next post: </span>The R Uncoast Unconference<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
     </div></div>
 </nav>
 

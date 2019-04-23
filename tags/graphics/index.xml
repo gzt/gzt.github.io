@@ -5,10 +5,21 @@
     <link>http://gzt.github.io/tags/graphics/</link>
     <description>Recent content in Graphics on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 13 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 22 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://gzt.github.io/tags/graphics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Plotting a Monotonic Increasing Sequence</title>
+      <link>http://gzt.github.io/post/plotting-a-monotonic-increasing-sequence/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/post/plotting-a-monotonic-increasing-sequence/</guid>
+      <description>I recently had an issue where I wanted to plot a line connecting the monotonically increasing part of some subset of the data. So I figured I would try to make my own ggplot2 layer to do it.
+It’s actually pretty straightforward! The first step is to read the documentation for extending ggplot2. A helpful quote if you ever have impostor syndrome:
+ As you read this document, you’ll see many things that will make you scratch your head and wonder why on earth is it designed this way?</description>
+    </item>
     
     <item>
       <title>why I&#39;ve been using base plot</title>
