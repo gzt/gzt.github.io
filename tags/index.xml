@@ -49,7 +49,7 @@
     <item>
       <title>Ggplot2</title>
       <link>http://gzt.github.io/tags/ggplot2/</link>
-      <pubDate>Tue, 13 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>http://gzt.github.io/tags/ggplot2/</guid>
       <description></description>
@@ -58,7 +58,7 @@
     <item>
       <title>Graphics</title>
       <link>http://gzt.github.io/tags/graphics/</link>
-      <pubDate>Tue, 13 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>http://gzt.github.io/tags/graphics/</guid>
       <description></description>
@@ -121,18 +121,9 @@
     <item>
       <title>R</title>
       <link>http://gzt.github.io/tags/r/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R, unconference</title>
-      <link>http://gzt.github.io/tags/r-unconference/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/tags/r-unconference/</guid>
+      <guid>http://gzt.github.io/tags/r/</guid>
       <description></description>
     </item>
     
@@ -160,6 +151,15 @@
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>http://gzt.github.io/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unconference</title>
+      <link>http://gzt.github.io/tags/unconference/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://gzt.github.io/tags/unconference/</guid>
       <description></description>
     </item>
     
