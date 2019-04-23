@@ -234,9 +234,7 @@ actual <code>R</code> experience. I&rsquo;m leaning toward the latter, as Marsag
 
 <p>Now to check the <code>R</code> code to <a href="https://svn.r-project.org/R/trunk/src/main/RNG.c" target="_blank">see how they implement this</a>.
 They have a helpful comment about what they&rsquo;re doing.</p>
-
-<pre><code>
-/* ===================  Mersenne Twister ========================== */
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">/* ===================  Mersenne Twister ========================== */
 /* From http://www.math.keio.ac.jp/~matumoto/emt.html */
 /* New URL (accessed 2018-11-08):
    http://www.math.sci.hiroshima-u.ac.jp/~m-mat/eindex.html
@@ -264,21 +262,16 @@ They have a helpful comment about what they&rsquo;re doing.</p>
 
    REFERENCE
    M. Matsumoto and T. Nishimura,
-   &quot;Mersenne Twister: A 623-Dimensionally Equidistributed Uniform
-   Pseudo-Random Number Generator&quot;,
+   &#34;Mersenne Twister: A 623-Dimensionally Equidistributed Uniform
+   Pseudo-Random Number Generator&#34;,
    ACM Transactions on Modeling and Computer Simulation,
    Vol. 8, No. 1, January 1998, pp 3--30.
-*/
-</code></pre>
-
+*/</pre></div>
 <p>Nice, we don&rsquo;t need to worry about their initialization being out of date.
 Looking at their code, it looks like a simple port of the standard implementation.
 This is a relief, as I do not want to have to do any real coding. One nice thing:
 They change a division into a multiplication.</p>
-
-<pre><code>    return ( (double)y * 2.3283064365386963e-10 ); /* reals: [0,1)-interval */
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    return ( (double)y * 2.3283064365386963e-10 ); /* reals: [0,1)-interval */</pre></div>
 <p>Maybe it doesn&rsquo;t matter in the end. #1 is done: the library&rsquo;s algorithm isn&rsquo;t really
 different from the reference implementation.</p>
 
@@ -352,11 +345,8 @@ you did before. I provide a set of
 whether your installation is working.</p>
 
 <p>You can compile and run the example file here:</p>
-
-<pre><code>gcc mt19937ar.c replaceR.c testreplaceR.c -o testreplaceR
-./testreplaceR
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">gcc mt19937ar.c replaceR.c testreplaceR.c -o testreplaceR
+./testreplaceR</pre></div>
 <p>To initialize with a hash of the arguments, you can call <code>hash_init_rand(argc, argv)</code> or
 if you are combining it with a set of seeds, <code>hash_set_seed(argc, argv, seed1, seed2)</code>.
 As written, these are like the reference implementation and the library in that they use
@@ -376,13 +366,10 @@ implementing them in <code>R</code> or what difficulties there are in doing that
 <h2 id="footnote-marsaglia-multicarry">Footnote: Marsaglia Multicarry</h2>
 
 <p>It&rsquo;s pretty easy code, it fits on three lines:</p>
-
-<pre><code>  /* 0177777(octal) == 65535(decimal)*/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">  /* 0177777(octal) == 65535(decimal)*/
       I1= 36969*(I1 &amp; 0177777) + (I1&gt;&gt;16);
       I2= 18000*(I2 &amp; 0177777) + (I2&gt;&gt;16);
-      return fixup(((I1 &lt;&lt; 16)^(I2 &amp; 0177777)) * i2_32m1); /* in [0,1) */
-</code></pre>
-
+      return fixup(((I1 &lt;&lt; 16)^(I2 &amp; 0177777)) * i2_32m1); /* in [0,1) */</pre></div>
 <p><code>I1</code> is one seed, <code>I2</code> is another seed, <code>i2_32m1</code> is <code>\(2^{32}-1\)</code>. Figuring out what&rsquo;s going on there is an
 exercise, I guess.</p>
 
