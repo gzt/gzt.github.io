@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>http://gzt.github.io/post/the-r-uncoast-unconference/</loc>
+    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://gzt.github.io/post/know-your-prngs/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url>
@@ -157,7 +162,7 @@
   
   <url>
     <loc>http://gzt.github.io/post/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -169,13 +174,19 @@
   
   <url>
     <loc>http://gzt.github.io/categories/r/</loc>
-    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://gzt.github.io/tags/r/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://gzt.github.io/tags/r-unconference/</loc>
+    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
