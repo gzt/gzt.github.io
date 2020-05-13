@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.70.0" />
+
+
+<title>Matrixdist News - gzt does statistics</title>
+<meta property="og:title" content="Matrixdist News - gzt does statistics">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/2553342.jpg"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/">Home</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/gzt/">GitHub</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/geoffreyzthompson">LinkedIn</a></li>
+    
+    <li><a href="https://twitter.com/gztstatistics">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">Matrixdist News</h1>
+
+    
+    <span class="article-date">2018-02-16</span>
+    
+
+    <div class="article-content">
+      
+
+
+<p>I have just finished setting up handling for AR(1) and compound symmetry variance structures in my maximum likelihood estimation function for matrix variate normal distributions in <code>matrixdist</code>. This means I may submit it to CRAN soon (it’s currently available on <a href="http://www.github.com/gzt/MixMatrix">github</a>). An example:</p>
+<pre class="r"><code>library(MixMatrix)
+A &lt;- rmatrixnorm(100, mean=array(0,dim=c(3,4)), U = toeplitz(c(1,.8,.64)), V = rWishart(1,7,diag(4))[,,1])
+MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;)</code></pre>
+<pre><code>$mean
+          [,1]       [,2]      [,3]      [,4]
+[1,] 0.2993834 0.05670813 0.4119235 0.2035769
+[2,] 0.3010836 0.06080098 0.2285708 0.1158808
+[3,] 0.1447031 0.17038166 0.2758068 0.2638911
+
+$U
+          [,1]     [,2]      [,3]
+[1,] 1.0000000 0.770081 0.5930248
+[2,] 0.7700810 1.000000 0.7700810
+[3,] 0.5930248 0.770081 1.0000000
+
+$V
+           [,1]      [,2]      [,3]       [,4]
+[1,]  1.0000000 0.1671565 0.4472189 -0.4210630
+[2,]  0.1671565 0.6778997 0.2886729  0.2235859
+[3,]  0.4472189 0.2886729 0.8673512  0.3561256
+[4,] -0.4210630 0.2235859 0.3561256  1.1370033
+
+$var
+[1] 2.559345
+
+$iter
+[1] 27
+
+$tol
+[1] 1.134173e-07
+
+$logLik
+ [1] -1713.291 -1682.135 -1667.450 -1662.871 -1660.327 -1659.303 -1658.751
+ [8] -1658.501 -1658.369 -1658.307 -1658.275 -1658.259 -1658.251 -1658.247
+[15] -1658.245 -1658.244 -1658.243 -1658.243 -1658.243 -1658.243 -1658.243
+[22] -1658.243 -1658.243 -1658.243 -1658.243 -1658.243 -1658.243
+
+$convergence
+[1] TRUE
+
+$call
+MLmatrixnorm(data = A, row.variance = &quot;AR(1)&quot;)</code></pre>
+<p>There is a performance hit as fitting for these require calls to <code>uniroot</code> to find the zeros of the derivatives, but it is not so bad in the cases I’ve looked at.</p>
+<pre class="r"><code>library(microbenchmark)
+res&lt;-microbenchmark(
+  MLmatrixnorm(A),
+  MLmatrixnorm(A, row.variance=&quot;AR(1)&quot;),
+  MLmatrixnorm(A, row.variance=&quot;CS&quot;)
+)
+plot(res, log=&quot;y&quot;, names = c(&quot;None&quot;, &quot;AR(1)&quot;, &quot;CS&quot;), 
+     col = c(&quot;darkred&quot;,&quot;royalblue&quot;,&quot;lightyellow&quot;),
+     xlab=&quot;Variance Structure&quot;)</code></pre>
+<p><img src="/post/2018-02-16-matrixdist-new_files/figure-html/benchmarking-1.png" width="672" /></p>
+<p>I will need to think hard about whether I want to add anything else first, as nobody wants to deal with massive updates to functionality in fast succession.</p>
+<p>Here is a possible agenda:</p>
+<ul>
+<li>More distributions, such as skew <span class="math inline">\(t\)</span>-distributions. I do not have much interest in matrix variate gamma distributions or beta distributions.</li>
+<li>Tools for working with matrix variate distributions, such as adaptations for LDA-type activities or clustering.</li>
+<li>Parameter estimation for distributions besides the normal distribution. <span class="math inline">\(t\)</span>-distributions typically require use of EM or its extensions.</li>
+<li>The <span class="math inline">\(t\)</span> distribution is parameterized differently between the matrix variate and multivariate cases - namely, a factor of <span class="math inline">\(\nu\)</span>. I changed it to be consistent with the multivariate case, but I probably should not have done so.</li>
+</ul>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+

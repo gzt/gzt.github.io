@@ -1,49 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Matrix variate on gzt does statistics</title>
-    <link>http://gzt.github.io/tags/matrix-variate/</link>
-    <description>Recent content in Matrix variate on gzt does statistics</description>
+    <title>matrix variate on gzt does statistics</title>
+    <link>/tags/matrix-variate/</link>
+    <description>Recent content in matrix variate on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
     <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gzt.github.io/tags/matrix-variate/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/matrix-variate/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Quick Checks of Your Simulated Distributions</title>
-      <link>http://gzt.github.io/post/verifying-your-simulations/</link>
+      <link>/2019/01/09/verifying-your-simulations/</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/post/verifying-your-simulations/</guid>
+      <guid>/2019/01/09/verifying-your-simulations/</guid>
       <description>I’ve written a couple packages for simulating from some distributions (Wishart-related distributions in CholWishart and matrix-variate distributions in matrixdist) and sometimes when a new function has been written or has been refactored, you need some ways to verify it is giving the answers you expect. There is an entire literature on this in general, but I am going to discuss one handy trick I sometimes use if there isn’t much theory to rely on or if you just want some quick heuristic to show you are in the right ballpark.</description>
     </item>
     
     <item>
       <title>New Version of CholWishart Released</title>
-      <link>http://gzt.github.io/post/new-version-of-cholwishart-released/</link>
+      <link>/2019/01/08/new-version-of-cholwishart-released/</link>
       <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/post/new-version-of-cholwishart-released/</guid>
+      <guid>/2019/01/08/new-version-of-cholwishart-released/</guid>
       <description>I have just released version 0.9.4 of CholWishart. If you want to simulate from the inverse Wishart, compute densities for the Wishart or inverse Wishart, or use the multivariate gamma or digamma function, this is the R package for you. It has a few other functions (notably, its namesake which generates random samples from the Wishart distribution and returns their Cholesky decomposition).
 New in this release: the pseudo Wishart and its pseudo-inverse, the generalized inverse Wishart.</description>
     </item>
     
     <item>
       <title>Software for Matrix Variate LDA and QDA</title>
-      <link>http://gzt.github.io/post/software-for-matrix-variate-lda-and-qda/</link>
+      <link>/2018/02/22/software-for-matrix-variate-lda-and-qda/</link>
       <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/post/software-for-matrix-variate-lda-and-qda/</guid>
+      <guid>/2018/02/22/software-for-matrix-variate-lda-and-qda/</guid>
       <description>In the previous post, I had some rough notes on classification of matrix variate data. In the matrixdist package, I now have some functions for training a linear or quadratic classifier. The usage is pretty similar to the function MASS::lda() or MASS::qda(), however it requires the input as an array or list of matrices and the group variable provided as a vector (that is, it cannot handle data frames or the formula interface directly, which is reasonable, as there is no immediately clear way to make that work for a collection of matrices - anybody using it would have to roll their own solutions anyway).</description>
     </item>
     
     <item>
       <title>Notes on Discriminant Analysis for Matrix Variate Distributions</title>
-      <link>http://gzt.github.io/post/notes-on-discriminant-analysis-for-matrix-variate-distributions/</link>
+      <link>/2018/02/20/notes-on-discriminant-analysis-for-matrix-variate-distributions/</link>
       <pubDate>Tue, 20 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/post/notes-on-discriminant-analysis-for-matrix-variate-distributions/</guid>
+      <guid>/2018/02/20/notes-on-discriminant-analysis-for-matrix-variate-distributions/</guid>
       <description>I have some brief notes for a discussion here so I’m posting them even though they’re a little incomplete because why not? Two-class classification for matrix variate normal distributions.
 Expected Cost of Misclassification ECM is expected cost of misclassification. Suppose there are two populations, \(\pi_1\) and \(\pi_2\) with prior probabilities of belonging to these classes, \(p_1\) and \(p_2\). Define a function, \(c(1|2)\) as the cost of misclassifying a member of population \(\pi_2\) as a member of class \(1\) (and vice versa).</description>
     </item>

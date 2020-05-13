@@ -1,234 +1,220 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://gzt.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/plotting-a-monotonic-increasing-sequence/</loc>
+    <loc>/categories/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/05/13/catsim-released/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/ggplot2/</loc>
     <lastmod>2019-04-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/the-r-uncoast-unconference/</loc>
+    <loc>/tags/graphics/</loc>
     <lastmod>2019-04-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/know-your-prngs/</loc>
+    <loc>/2019/04/22/plotting-a-monotonic-increasing-sequence/</loc>
+    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/04/22/the-r-uncoast-unconference/</loc>
+    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/unconference/</loc>
+    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/c/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/a-quick-note-about-rinvwishart-in-cholwishart/</loc>
+    <loc>/categories/c/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/computing/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/03/09/know-your-prngs/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/statistics/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/01/09/a-quick-note-about-rinvwishart-in-cholwishart/</loc>
     <lastmod>2019-01-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/verifying-your-simulations/</loc>
+    <loc>/tags/linear-algebra/</loc>
     <lastmod>2019-01-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/new-version-of-cholwishart-released/</loc>
+    <loc>/tags/matrix-variate/</loc>
+    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/multivariate/</loc>
+    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/profiling/</loc>
+    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/01/09/verifying-your-simulations/</loc>
+    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/wishart/</loc>
+    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/01/08/new-version-of-cholwishart-released/</loc>
     <lastmod>2019-01-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/i-just-can-t-with-this-one/</loc>
+    <loc>/tags/ethics/</loc>
     <lastmod>2018-03-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/cholwishart-now-on-cran/</loc>
+    <loc>/2018/03/08/i-just-can-t-with-this-one/</loc>
+    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/science/</loc>
+    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/social-responsibility/</loc>
+    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/02/26/cholwishart-now-on-cran/</loc>
     <lastmod>2018-02-26T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/why-don-t-my-results-agree-with-some-other-function/</loc>
+    <loc>/tags/matrixdist/</loc>
     <lastmod>2018-02-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/software-for-matrix-variate-lda-and-qda/</loc>
+    <loc>/tags/randomness/</loc>
+    <lastmod>2018-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/02/23/why-don-t-my-results-agree-with-some-other-function/</loc>
+    <lastmod>2018-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/classification/</loc>
     <lastmod>2018-02-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/notes-on-discriminant-analysis-for-matrix-variate-distributions/</loc>
+    <loc>/tags/mixmatrix/</loc>
+    <lastmod>2018-02-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/02/22/software-for-matrix-variate-lda-and-qda/</loc>
+    <lastmod>2018-02-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/02/20/notes-on-discriminant-analysis-for-matrix-variate-distributions/</loc>
     <lastmod>2018-02-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/matrixdist-new/</loc>
+    <loc>/2018/02/16/matrixdist-new/</loc>
     <lastmod>2018-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/working-with-c-and-r/</loc>
+    <loc>/tags/optimization/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/why-i-ve-been-using-base-plot/</loc>
+    <loc>/2018/02/13/why-i-ve-been-using-base-plot/</loc>
     <lastmod>2018-02-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>http://gzt.github.io/post/some-linear-algebra-tricks/</loc>
+    <loc>/2018/02/13/working-with-c-and-r/</loc>
+    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2018/02/12/some-linear-algebra-tricks/</loc>
     <lastmod>2018-02-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/c/</loc>
-    <lastmod>2019-01-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/categories/c/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/categories/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/classification/</loc>
-    <lastmod>2018-02-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/computing/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/ethics/</loc>
-    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/ggplot2/</loc>
-    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/graphics/</loc>
-    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/linear-algebra/</loc>
-    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/matrix-variate/</loc>
-    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/matrixdist/</loc>
-    <lastmod>2018-02-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/multivariate/</loc>
-    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/optimization/</loc>
-    <lastmod>2018-02-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/post/</loc>
-    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/profiling/</loc>
-    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/r/</loc>
-    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/categories/r/</loc>
-    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/randomness/</loc>
-    <lastmod>2018-02-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/categories/science/</loc>
-    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/social-responsibility/</loc>
-    <lastmod>2018-03-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/statistics/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/</loc>
-    <lastmod>2019-01-08T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/unconference/</loc>
-    <lastmod>2019-04-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://gzt.github.io/tags/wishart/</loc>
-    <lastmod>2019-01-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
 </urlset>

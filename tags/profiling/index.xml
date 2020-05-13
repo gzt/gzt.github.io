@@ -1,39 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Profiling on gzt does statistics</title>
-    <link>http://gzt.github.io/tags/profiling/</link>
-    <description>Recent content in Profiling on gzt does statistics</description>
+    <title>profiling on gzt does statistics</title>
+    <link>/tags/profiling/</link>
+    <description>Recent content in profiling on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
     <lastBuildDate>Wed, 09 Jan 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gzt.github.io/tags/profiling/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/profiling/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Quick Checks of Your Simulated Distributions</title>
-      <link>http://gzt.github.io/post/verifying-your-simulations/</link>
+      <link>/2019/01/09/verifying-your-simulations/</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/post/verifying-your-simulations/</guid>
+      <guid>/2019/01/09/verifying-your-simulations/</guid>
       <description>I’ve written a couple packages for simulating from some distributions (Wishart-related distributions in CholWishart and matrix-variate distributions in matrixdist) and sometimes when a new function has been written or has been refactored, you need some ways to verify it is giving the answers you expect. There is an entire literature on this in general, but I am going to discuss one handy trick I sometimes use if there isn’t much theory to rely on or if you just want some quick heuristic to show you are in the right ballpark.</description>
     </item>
     
     <item>
       <title>Working with C and R</title>
-      <link>http://gzt.github.io/post/working-with-c-and-r/</link>
+      <link>/2018/02/13/working-with-c-and-r/</link>
       <pubDate>Tue, 13 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/post/working-with-c-and-r/</guid>
+      <guid>/2018/02/13/working-with-c-and-r/</guid>
       <description>or: adventures with .Call Generally I work either in R or in C but not both. My research is trying to do some big things faster and there’s existing code in C that I’m working with. I might dump some output and then explore it in R, but I don’t need to interface between them. On the other hand, when consulting with others it’s going to come down to good old-fashioned statistics so that happens in R (or SAS if applicable, for some things it’s better and for some things the people you’re working with are using SAS).</description>
     </item>
     
     <item>
       <title>Some linear algebra tricks</title>
-      <link>http://gzt.github.io/post/some-linear-algebra-tricks/</link>
+      <link>/2018/02/12/some-linear-algebra-tricks/</link>
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/post/some-linear-algebra-tricks/</guid>
+      <guid>/2018/02/12/some-linear-algebra-tricks/</guid>
       <description>You may have come across some of this before, but I wanted to write this down for some future reference because it came up in a project of mine and I want to refer to it later. The general theme is that if you know something about the structure of the matrices you’re working with, you can sometimes speed some things up.
 Avoiding matrix inversion. Why do you want to invert your matrix?</description>
     </item>

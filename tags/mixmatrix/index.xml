@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MixMatrix on gzt does statistics</title>
+    <link>/tags/mixmatrix/</link>
+    <description>Recent content in MixMatrix on gzt does statistics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/mixmatrix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Software for Matrix Variate LDA and QDA</title>
+      <link>/2018/02/22/software-for-matrix-variate-lda-and-qda/</link>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/02/22/software-for-matrix-variate-lda-and-qda/</guid>
+      <description>In the previous post, I had some rough notes on classification of matrix variate data. In the matrixdist package, I now have some functions for training a linear or quadratic classifier. The usage is pretty similar to the function MASS::lda() or MASS::qda(), however it requires the input as an array or list of matrices and the group variable provided as a vector (that is, it cannot handle data frames or the formula interface directly, which is reasonable, as there is no immediately clear way to make that work for a collection of matrices - anybody using it would have to roll their own solutions anyway).</description>
+    </item>
+    
+  </channel>
+</rss>

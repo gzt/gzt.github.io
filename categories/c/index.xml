@@ -1,31 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C on gzt does statistics</title>
-    <link>http://gzt.github.io/categories/c/</link>
+    <link>/categories/c/</link>
     <description>Recent content in C on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
     <lastBuildDate>Sat, 09 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gzt.github.io/categories/c/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/c/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Know your PRNGs</title>
-      <link>http://gzt.github.io/post/know-your-prngs/</link>
+      <link>/2019/03/09/know-your-prngs/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/post/know-your-prngs/</guid>
+      <guid>/2019/03/09/know-your-prngs/</guid>
       <description>TL;DR version: if all you&amp;rsquo;re using the standalone R math library in C for is generating uniform random numbers, I have a little C program to remove that dependency as long as you don&amp;rsquo;t mind your seeds not having the same output as R. I might even fix that later.
 I fell into a rabbit hole recently - I do a fair amount of work in C using the R standalone math library for pseudo-random number generation (PRNGs) and sometimes some of its special functions (rather than, say, working in C so it will be called from R or trying to implement a PRNG myself or a special function myself - leave RNGs and numerical analysis to experts).</description>
     </item>
     
     <item>
       <title>Working with C and R</title>
-      <link>http://gzt.github.io/post/working-with-c-and-r/</link>
+      <link>/2018/02/13/working-with-c-and-r/</link>
       <pubDate>Tue, 13 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/post/working-with-c-and-r/</guid>
+      <guid>/2018/02/13/working-with-c-and-r/</guid>
       <description>or: adventures with .Call Generally I work either in R or in C but not both. My research is trying to do some big things faster and there’s existing code in C that I’m working with. I might dump some output and then explore it in R, but I don’t need to interface between them. On the other hand, when consulting with others it’s going to come down to good old-fashioned statistics so that happens in R (or SAS if applicable, for some things it’s better and for some things the people you’re working with are using SAS).</description>
     </item>
     

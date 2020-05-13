@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.70.0" />
+
+
+<title>CholWishart now on CRAN - gzt does statistics</title>
+<meta property="og:title" content="CholWishart now on CRAN - gzt does statistics">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/2553342.jpg"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/">Home</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/gzt/">GitHub</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/geoffreyzthompson">LinkedIn</a></li>
+    
+    <li><a href="https://twitter.com/gztstatistics">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">1 min read</span>
+    
+
+    <h1 class="article-title">CholWishart now on CRAN</h1>
+
+    
+    <span class="article-date">2018-02-26</span>
+    
+
+    <div class="article-content">
+      
+
+
+<p>I decided to break off from <code>matrixdist</code> the portion dedicated to the Wishart-related functions.
+They are self-contained and don’t really exist on their own elsewhere (there are a few that include
+them along with a lot of other functionality, some in C++ but a lot in R), so it’s good to have a little
+package that offers them on their own. Not everybody would want or need <code>matrixdist</code> and it’s good to
+offer the option without polluting the <code>NAMESPACE</code>.</p>
+<p>The package offers:</p>
+<ul>
+<li>Sampling from the Cholesky factorization of a Wishart distribution.</li>
+<li>Sampling from an inverse Wishart distribution.</li>
+<li>Sampling from the Cholesky factorization of an inverse Wishart distribution.</li>
+<li>Density function for the Wishart and inverse Wishart distributions.</li>
+<li>Multivariate gamma and digamma functions.</li>
+</ul>
+<p>The sampling functions are in C and are based on the function <code>stats::rWishart()</code> so they are
+roughly as fast.</p>
+<pre class="r"><code>set.seed(20180226)
+sigma &lt;- rWishart(1, 10, diag(6))[,,1]
+args &lt;- list(n = 10000, df = 10, Sigma = sigma)
+library(&#39;CholWishart&#39;)
+library(&#39;microbenchmark&#39;)
+library(&#39;ggplot2&#39;)
+results &lt;- microbenchmark(
+  A &lt;- do.call(&quot;rWishart&quot;, args),
+  A &lt;- do.call(&quot;rCholWishart&quot;,args),
+  A &lt;- do.call(&quot;rInvWishart&quot;,args),
+  A &lt;- do.call(&quot;rInvCholWishart&quot;,args)
+)
+autoplot(results)+theme_bw()</code></pre>
+<pre><code>## Coordinate system already present. Adding new coordinate system, which will replace the existing one.</code></pre>
+<p><img src="/post/2018-02-26-cholwishart-now-on-cran_files/figure-html/demonstration-1.png" width="672" /></p>
+<p>Check out the package on <a href="https://cran.r-project.org/package=CholWishart">CRAN</a> or install:</p>
+<pre><code>install.packages(&#39;CholWishart&#39;)</code></pre>
+<p>or get the lastest development version:</p>
+<pre><code>devtools::install_github(&quot;gzt/CholWishart&quot;)</code></pre>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+
+    
+  </body>
+</html>
+

@@ -1,174 +1,184 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on gzt does statistics</title>
-    <link>http://gzt.github.io/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 08 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://gzt.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>C</title>
-      <link>http://gzt.github.io/tags/c/</link>
-      <pubDate>Tue, 08 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Classification</title>
-      <link>http://gzt.github.io/tags/classification/</link>
-      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/classification/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Computing</title>
-      <link>http://gzt.github.io/tags/computing/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/computing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ethics</title>
-      <link>http://gzt.github.io/tags/ethics/</link>
-      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/ethics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ggplot2</title>
-      <link>http://gzt.github.io/tags/ggplot2/</link>
-      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/ggplot2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Graphics</title>
-      <link>http://gzt.github.io/tags/graphics/</link>
-      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/graphics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linear algebra</title>
-      <link>http://gzt.github.io/tags/linear-algebra/</link>
-      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/linear-algebra/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Matrix variate</title>
-      <link>http://gzt.github.io/tags/matrix-variate/</link>
-      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/matrix-variate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Matrixdist</title>
-      <link>http://gzt.github.io/tags/matrixdist/</link>
-      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/matrixdist/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Multivariate</title>
-      <link>http://gzt.github.io/tags/multivariate/</link>
-      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/multivariate/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Optimization</title>
-      <link>http://gzt.github.io/tags/optimization/</link>
-      <pubDate>Tue, 13 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/optimization/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Profiling</title>
-      <link>http://gzt.github.io/tags/profiling/</link>
-      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
-      
-      <guid>http://gzt.github.io/tags/profiling/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>R</title>
-      <link>http://gzt.github.io/tags/r/</link>
+      <link>/tags/r/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ggplot2</title>
+      <link>/tags/ggplot2/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/tags/r/</guid>
+      <guid>/tags/ggplot2/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Randomness</title>
-      <link>http://gzt.github.io/tags/randomness/</link>
-      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      <title>graphics</title>
+      <link>/tags/graphics/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/tags/randomness/</guid>
+      <guid>/tags/graphics/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Social responsibility</title>
-      <link>http://gzt.github.io/tags/social-responsibility/</link>
-      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      <title>unconference</title>
+      <link>/tags/unconference/</link>
+      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/tags/social-responsibility/</guid>
+      <guid>/tags/unconference/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Statistics</title>
-      <link>http://gzt.github.io/tags/statistics/</link>
+      <title>C</title>
+      <link>/tags/c/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/tags/statistics/</guid>
+      <guid>/tags/c/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Unconference</title>
-      <link>http://gzt.github.io/tags/unconference/</link>
-      <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
+      <title>computing</title>
+      <link>/tags/computing/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/tags/unconference/</guid>
+      <guid>/tags/computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>statistics</title>
+      <link>/tags/statistics/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linear algebra</title>
+      <link>/tags/linear-algebra/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/linear-algebra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matrix variate</title>
+      <link>/tags/matrix-variate/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/matrix-variate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>multivariate</title>
+      <link>/tags/multivariate/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/multivariate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>profiling</title>
+      <link>/tags/profiling/</link>
+      <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/profiling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Wishart</title>
-      <link>http://gzt.github.io/tags/wishart/</link>
+      <link>/tags/wishart/</link>
       <pubDate>Wed, 09 Jan 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://gzt.github.io/tags/wishart/</guid>
+      <guid>/tags/wishart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ethics</title>
+      <link>/tags/ethics/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/ethics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>social responsibility</title>
+      <link>/tags/social-responsibility/</link>
+      <pubDate>Thu, 08 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/social-responsibility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matrixdist</title>
+      <link>/tags/matrixdist/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/matrixdist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>randomness</title>
+      <link>/tags/randomness/</link>
+      <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/randomness/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>classification</title>
+      <link>/tags/classification/</link>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MixMatrix</title>
+      <link>/tags/mixmatrix/</link>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/mixmatrix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>optimization</title>
+      <link>/tags/optimization/</link>
+      <pubDate>Tue, 13 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/optimization/</guid>
       <description></description>
     </item>
     

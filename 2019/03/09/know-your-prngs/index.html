@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.70.0" />
+
+
+<title>Know your PRNGs - gzt does statistics</title>
+<meta property="og:title" content="Know your PRNGs - gzt does statistics">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+
+<link href='//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/2553342.jpg"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/">Home</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/gzt/">GitHub</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/geoffreyzthompson">LinkedIn</a></li>
+    
+    <li><a href="https://twitter.com/gztstatistics">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">9 min read</span>
+    
+
+    <h1 class="article-title">Know your PRNGs</h1>
+
+    
+    <span class="article-date">2019-03-09</span>
+    
+
+    <div class="article-content">
+      <p>TL;DR version: if all you&rsquo;re using the standalone <code>R</code> math library in C for is generating uniform
+random numbers, I have a <a href="https://github.com/gzt/replaceR">little C program</a> to remove
+that dependency as long as you don&rsquo;t mind your seeds not having the same output as <code>R</code>. I might
+even fix that later.</p>
+<p>I fell into a rabbit hole recently - I do a fair amount of work in C using the <code>R</code> standalone math
+library for pseudo-random number generation (PRNGs) and sometimes some of its special functions
+(rather than, say, working in C so it will be called from <code>R</code> or trying to implement a PRNG
+myself or a special function myself - leave RNGs and numerical analysis to experts). The usage is
+fairly simple - you call the standalone library, initialize your PRNG with <code>set_seed(seed1, seed2)</code>
+(this deserves some discussion, maybe later, it is an important topic),
+then go ahead and call <code>runif()</code> or whatever other function you&rsquo;re interested in.
+There are a few pitfalls but that&rsquo;s beyond the scope of this
+post. Please feel free to reach out if you ever need help, though!</p>
+<p>Anyway, I&rsquo;ve been working on a cluster recently where it just seems to be a pain to get anything
+installed on there. Rather than sort all that out, I looked at my code and realized all I was
+doing in this set of programs with the <code>R</code> math library was calling <code>runif()</code>. So, what would it
+take to replace it? I was simply using the default and I didn&rsquo;t need perfect replication -
+that is to say, I didn&rsquo;t need to get the same results as <code>R</code> with the same seeds, I just needed
+to be able to reproduce results if desired. I also want to be able to go back to the &ldquo;real&rdquo;
+library if I need something more than just the PRNG, so I only want to have to change a line
+or two in a header to switch.</p>
+<p>So, what do I need to do?</p>
+<ol>
+<li>Find out what PRNG is used by default for <code>runif()</code> and how it is implemented. Hopefully
+the C code in the the library is not too heavily <code>SEXP</code>ed up or not too different from the
+reference implementation of the method. I&rsquo;m an okay programmer but these are things that you
+don&rsquo;t want to mess with.</li>
+<li>Find out how <code>set_seed()</code> and initialization work and write a replacement function.</li>
+<li>Put it into my own code.</li>
+</ol>
+<h2 id="so-what-prng-are-we-using-anyway">So what PRNG are we using anyway</h2>
+<p>The helpful <code>R</code> documentation says the default method in <code>R</code> is the
+<a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/emt19937ar.html">Mersenne Twister</a>
+algorithm, which seems to be a <em>de facto</em> standard. The reference implementation is in
+<a href="http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/MT2002/CODES/mt19937ar.c">pretty clean C code</a> and seems fairly straightforward. Neat! There&rsquo;s a little warning on the site that
+old methods of initialization aren&rsquo;t so good, so we&rsquo;ll have to see what <code>R</code> is doing and
+be careful when deciding what to do ourselves. In the future I might want to replicate the
+other methods that <code>R</code> offers but that adds some overhead.</p>
+<p>The default method for the <code>R</code> standalone library called from C, though is the Marsaglia Multicarry.
+I could implement that to completely duplicate the <code>Rmath.h</code> experience or I could duplicate the
+actual <code>R</code> experience. I&rsquo;m leaning toward the latter, as Marsaglia seems a little too easy!</p>
+<p>Now to check the <code>R</code> code to <a href="https://svn.r-project.org/R/trunk/src/main/RNG.c">see how they implement this</a>.
+They have a helpful comment about what they&rsquo;re doing.</p>
+<pre><code>
+/* ===================  Mersenne Twister ========================== */
+/* From http://www.math.keio.ac.jp/~matumoto/emt.html */
+/* New URL (accessed 2018-11-08):
+   http://www.math.sci.hiroshima-u.ac.jp/~m-mat/eindex.html
+
+   The initialization method in the 1998 code and paper had a minor
+   issue that was addressed with new initialization approaches in an
+   update in 2002.  R has always used a different initialization
+   approach and is not affected by that issue.
+*/
+
+/* A C-program for MT19937: Real number version([0,1)-interval)
+   (1999/10/28)
+     genrand() generates one pseudorandom real number (double)
+   which is uniformly distributed on [0,1)-interval, for each
+   call. sgenrand(seed) sets initial values to the working area
+   of 624 words. Before genrand(), sgenrand(seed) must be
+   called once. (seed is any 32-bit integer.)
+   Integer generator is obtained by modifying two lines.
+     Coded by Takuji Nishimura, considering the suggestions by
+   Topher Cooper and Marc Rieffel in July-Aug. 1997.
+
+   Copyright (C) 1997, 1999 Makoto Matsumoto and Takuji Nishimura.
+   When you use this, send an email to: matumoto@math.keio.ac.jp
+   with an appropriate reference to your work.
+
+   REFERENCE
+   M. Matsumoto and T. Nishimura,
+   &quot;Mersenne Twister: A 623-Dimensionally Equidistributed Uniform
+   Pseudo-Random Number Generator&quot;,
+   ACM Transactions on Modeling and Computer Simulation,
+   Vol. 8, No. 1, January 1998, pp 3--30.
+*/
+</code></pre><p>Nice, we don&rsquo;t need to worry about their initialization being out of date.
+Looking at their code, it looks like a simple port of the standard implementation.
+This is a relief, as I do not want to have to do any real coding. One nice thing:
+They change a division into a multiplication.</p>
+<pre><code>    return ( (double)y * 2.3283064365386963e-10 ); /* reals: [0,1)-interval */
+</code></pre><p>Maybe it doesn&rsquo;t matter in the end. #1 is done: the library&rsquo;s algorithm isn&rsquo;t really
+different from the reference implementation.</p>
+<p>An important note here: a typical PRNG will generate a unsigned 32-bit <code>int</code> with approximately
+uniform distribution in its range. <code>R</code> takes that <code>int</code> and turns it into a uniform <code>\([0,1)\)</code> by
+dividing by <code>\(2^32\)</code>. It uses these uniform values to generate other random variables and perform
+sampling. Frankly, you might want to uniformly sample from a large set of integers more
+efficiently than that or generate uniform <code>double</code>s with more precision, so we might look into
+that. <code>R</code> has recently <a href="http://r.789695.n4.nabble.com/Bias-in-R-s-random-integers-td4752563.html">begun fixing their default for sampling</a>
+from large sets of integers, so that&rsquo;s good.</p>
+<h2 id="initialization-in-r">Initialization in R</h2>
+<p>Pseudo-random number generators have some stored <em>state</em> and then they have two parts:</p>
+<ol>
+<li>Generating the next state.</li>
+<li>Generating the next random number from the state.</li>
+</ol>
+<p>Many generators put all their work in one or the other of these steps. If you know the state,
+you know the entire future of the PRNG. If there is an easy function for inverting step 2,
+you can find out the state of the PRNG by observing enough random numbers.
+The Mersenne Twister has a state that is 623-dimensional and you obtain the next random number
+by reading the next entry of the state and doing a simple, invertible function of it.
+When you have gone through all 623 entries, it
+generates a new state (ie 623 new random numbers). The other PRNGs in <code>R</code> have smaller states.
+However, you do not provide <code>R</code> with 623 32-bit integers, you provide it with 1 in <code>R</code>
+itself or 2 when calling it from C (note Marsaglia Multicarry has a state of size 2 and an identity function
+for step 2 as well). So, what are we doing?</p>
+<p>In looking at the code, they aren&rsquo;t using the outdated initialization which the authors
+of the MT algorithm warn against. It <em>looks</em> like they initialize by using the good ol&rsquo;
+LCG (with a multiplier of <code>69069</code>, nice) with whatever (one) seed is provided to fill out
+the state space and then generate a new state based on that.
+<code>R</code> from <code>set_seed()</code> in C uses both values for initializing <code>runif()</code> with Marsaglia Multicarry,
+and perhaps we should want to emulate this behavior rather than consider how MT is initialized.
+For users of MT in R, this could be an issue for some, as, like,
+this means there are only <code>2^32</code> possible initializations, but it&rsquo;s not a big problem.
+However, what are the odds we&rsquo;ll be providing an actual 32 bits of entropy to the generator?
+It would be nice to be able to add in more entropy! The reference implementation also provides
+a method for initializing with an arbitrary array of values. This is good.</p>
+<p>Setting the seed can be a real issue if you want a reproducible simulation and/or are running a
+lot of simulations (say, you&rsquo;re operating in parallel). If you don&rsquo;t care about reproducing
+your work and are only running one simulation, you can let <code>R</code> do its thing if you&rsquo;re working
+interactively or, if you&rsquo;re in C, you can use some tried-and-true methods like generating
+something based on the time or your process ID or some hardware source or entropy. If you&rsquo;re
+doing something just for demonstration purposes and want to also provide some kind of time stamp,
+I like to make a seed based on the date (<code>20190310</code> for today, for instance). When running
+things in parallel, whether you want it to be completely reproducible or not, initialization is
+going to require some care - basing something on the time is usually okay but if you&rsquo;re starting
+a bunch of processes in near proximity to each other, there&rsquo;s a possibility of collisions and
+you have to consider how the nearness of seeds is related to the results of your PRNG even if
+they don&rsquo;t collide (spoiler: for some, including MT, this is a big problem).</p>
+<p>All this to say: I made this take both provided seeds in <code>set_seed()</code> into account as well as
+provided a method for using the <code>init_by_array()</code> function. I also included a function that
+will initialize based on a hash of the arguments provided to call the program. This is handy
+for me because I will often run several copies of the same program with only minor changes
+in the arguments but I also want the results to be reproducible (at least while testing).
+The hash makes it so that each program will have a rather different seed even with only a
+minor change in the arguments but will have the same seed if I run it again with the exact
+same arguments.</p>
+<h2 id="using-this">Using This</h2>
+<p>Include the header for <code>mt19337</code> and <code>replaceR</code> and you can use <code>set_seed</code> and <code>runif</code> just as
+you did before. I provide a set of
+<a href="https://github.com/gzt/replaceR/blob/master/ReplaceResults.txt">reference results</a> to check
+whether your installation is working.</p>
+<p>You can compile and run the example file here:</p>
+<pre><code>gcc mt19937ar.c replaceR.c testreplaceR.c -o testreplaceR
+./testreplaceR
+</code></pre><p>To initialize with a hash of the arguments, you can call <code>hash_init_rand(argc, argv)</code> or
+if you are combining it with a set of seeds, <code>hash_set_seed(argc, argv, seed1, seed2)</code>.
+As written, these are like the reference implementation and the library in that they use
+global variables for state. You can get around this.</p>
+<h2 id="future-thoughts">Future thoughts</h2>
+<p>The MT random number generator has a few difficulties: it fails statistical tests, has a
+large state, has problems when it comes to seeds that differ very little (problem for parallelism),
+and is slow for what it gives you. Also, observing a few hundred draws will
+tell you everything you need to know about the state, which you may or may not care about.</p>
+<p>There are other PRNGs that may or may not have these problems. In the future, I&rsquo;ll talk about
+implementing them in <code>R</code> or what difficulties there are in doing that (I&rsquo;ve been looking at
+<a href="https://www.pcg-random.org">PCG</a>, for one).</p>
+<h2 id="footnote-marsaglia-multicarry">Footnote: Marsaglia Multicarry</h2>
+<p>It&rsquo;s pretty easy code, it fits on three lines:</p>
+<pre><code>  /* 0177777(octal) == 65535(decimal)*/
+      I1= 36969*(I1 &amp; 0177777) + (I1&gt;&gt;16);
+      I2= 18000*(I2 &amp; 0177777) + (I2&gt;&gt;16);
+      return fixup(((I1 &lt;&lt; 16)^(I2 &amp; 0177777)) * i2_32m1); /* in [0,1) */
+</code></pre><p><code>I1</code> is one seed, <code>I2</code> is another seed, <code>i2_32m1</code> is <code>\(2^{32}-1\)</code>. Figuring out what&rsquo;s going on there is an
+exercise, I guess.</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+<script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+
+
+
+    
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+  </body>
+</html>
+
