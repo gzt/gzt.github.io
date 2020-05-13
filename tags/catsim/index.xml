@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>catsim on gzt does statistics</title>
+    <link>/tags/catsim/</link>
+    <description>Recent content in catsim on gzt does statistics</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/catsim/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New preprint for CatSIM</title>
+      <link>/2020/05/13/new-preprint-for-catsim/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/13/new-preprint-for-catsim/</guid>
+      <description>I have a preprint for one of the project I have been working on, CatSIM. You can find information about that software on the pkgdown site or download it from CRAN.</description>
+    </item>
+    
+  </channel>
+</rss>

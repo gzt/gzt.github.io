@@ -22,6 +22,15 @@ You can view its pkgdown site.</description>
     </item>
     
     <item>
+      <title>New preprint for CatSIM</title>
+      <link>/2020/05/13/new-preprint-for-catsim/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/13/new-preprint-for-catsim/</guid>
+      <description>I have a preprint for one of the project I have been working on, CatSIM. You can find information about that software on the pkgdown site or download it from CRAN.</description>
+    </item>
+    
+    <item>
       <title>Plotting a Monotonic Increasing Sequence</title>
       <link>/2019/04/22/plotting-a-monotonic-increasing-sequence/</link>
       <pubDate>Mon, 22 Apr 2019 00:00:00 +0000</pubDate>
