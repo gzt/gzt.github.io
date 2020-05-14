@@ -6,10 +6,20 @@
     <description>Recent content in Posts on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Talk at the ISU TADS group on k-means image compression</title>
+      <link>/2020/05/14/talk-at-the-isu-tads-group-on-k-means-image-compression/</link>
+      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/05/14/talk-at-the-isu-tads-group-on-k-means-image-compression/</guid>
+      <description>I recently gave a talk at TADS about one of my old projects - it&amp;rsquo;s not my best idea but I did put a fair bit of work into it. The audio/video may be available soon. I will update this post when they are if you really want it, but the talks are somewhat informal.
+ Slides for the talk  </description>
+    </item>
     
     <item>
       <title>CatSIM Released</title>

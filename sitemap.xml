@@ -14,12 +14,57 @@
   
   <url>
     <loc>/tags/c/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/c/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/clustering/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/compression/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/compression/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/research/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2020/05/14/talk-at-the-isu-tads-group-on-k-means-image-compression/</loc>
+    <lastmod>2020-05-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -43,22 +88,7 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/r/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/r/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -85,11 +115,6 @@
   <url>
     <loc>/tags/unconference/</loc>
     <lastmod>2019-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/c/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
