@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Great News! I fixed my web-log</title>
+      <link>/2022/05/01/great-news-i-fixed-my-web-log/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/05/01/great-news-i-fixed-my-web-log/</guid>
+      <description>I haven&amp;rsquo;t successfully published a post in a while but I finally fixed my web-log and pushed out some old posts today. I had several issues (putting notes here so I can fix again later):
+ A recent issue, but R Studio was not working on my main computer (Fedora with XFCE). I often use Emacs+ESS, but for things like the blogdown, it is just easier to use R Studio and its add-ins.</description>
+    </item>
+    
+    <item>
       <title>New paper announcement: matching fragments using images of fracture surface replicas</title>
       <link>/2022/05/01/new-paper-announcement-matching-fragments-using-images-of-fracture-surface-replicas/</link>
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>

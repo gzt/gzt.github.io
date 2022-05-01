@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Hugo 0.70.0" />
+
+
+<title>Great News! I fixed my web-log - gzt does statistics</title>
+<meta property="og:title" content="Great News! I fixed my web-log - gzt does statistics">
+
+
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+
+
+
+  
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/fonts.css" media="all">
+<link rel="stylesheet" href="/css/main.css" media="all">
+
+
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <nav class="nav">
+  <a href="/" class="nav-logo">
+    <img src="/2553342.jpg"
+         width="50"
+         height="50"
+         alt="Logo">
+  </a>
+
+  <ul class="nav-links">
+    
+    <li><a href="/">Home</a></li>
+    
+    <li><a href="/about/">About</a></li>
+    
+    <li><a href="https://github.com/gzt/">GitHub</a></li>
+    
+    <li><a href="https://www.linkedin.com/in/geoffreyzthompson">LinkedIn</a></li>
+    
+    <li><a href="https://twitter.com/gztstatistics">Twitter</a></li>
+    
+  </ul>
+</nav>
+
+      </header>
+
+
+<main class="content" role="main">
+
+  <article class="article">
+    
+    <span class="article-duration">2 min read</span>
+    
+
+    <h1 class="article-title">Great News! I fixed my web-log</h1>
+
+    
+    <span class="article-date">2022-05-01</span>
+    
+
+    <div class="article-content">
+      <p>I haven&rsquo;t successfully published a post in a while but I finally fixed my web-log
+and pushed out some old posts today. I had several issues (putting notes here so I can fix again later):</p>
+<ol>
+<li>A recent issue, but R Studio was not working on my main computer (Fedora with XFCE).
+I often use Emacs+ESS, but for things like the <code>blogdown</code>, it is just easier to use
+R Studio and its add-ins. Apparently it is now best practice to install from the
+fedora repositories and run <code>dnf install rstudio-desktop</code>. I had, in the past, installed
+directly from the R Studio provided rpm.</li>
+<li>I basically had to restart the web-log &ndash; download the repositories and start working again from there.
+Usually this is fine, but I&rsquo;m doing this an awkward way which isn&rsquo;t recommended anymore: building locally,
+then having <code>public/</code> as a submodule which my <code>gzt.github.io</code> page points at. Here are,
+I think, the steps I used to fix this. First, clone the blog site. Second, remove the <code>public</code> directory.
+Third, run <code>git submodule update --recursive --remote</code>. Fourth, change to the <code>public</code> directory, verify it has what you want (say, run <code>git remote -v</code> and <code>git status</code>), and do something like <code>git checkout master</code> (this is so old I still called the main branch <code>master</code> and haven&rsquo;t gotten around to changing it). Then you should be ready to rock and/or roll.</li>
+<li>My about page and such are horribly out of date! I have to change some things before I updated anything.</li>
+</ol>
+<p>What finally got me to fix #2? My time with Indiana University as a visiting assistant professor is ending and I am open to new opportunities now, which means I should probably have a more up-to-date web presence.</p>
+
+    </div>
+  </article>
+
+  
+
+
+</main>
+
+      <footer class="footer">
+        <ul class="footer-links">
+          <li>
+            <a href="/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
+          </li>
+          <li>
+            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="/images/hugo-logo.png" alt="Img link to Hugo website" width="22" height="22"></a>
+          </li>
+        </ul>
+      </footer>
+
+    </div>
+    
+
+    
+
+    
+  </body>
+</html>
+
