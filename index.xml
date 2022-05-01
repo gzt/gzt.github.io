@@ -17,7 +17,16 @@
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>I&amp;rsquo;m Geoff Thompson, a PhD candidate at the Department of Statistics at Iowa State University. I should be defending this summer (2020). My research interests have been in clustering and other classification problems as well as unsupervised or semisupervised learning. I have also worked in the statistical consulting group as the university in addition to my research. You can see my software on my github and, below, in my list of projects, you can see some of the work i&amp;rsquo;ve done.</description>
+      <description>I&amp;rsquo;m Geoff Thompson, a Visiting Assistant Professor at Indiana University. I have a PhD from Iowa State University (2021). My research interests have been in clustering and other classification problems as well as unsupervised or semisupervised learning. I have also worked in the statistical consulting group as the university in addition to my research. You can see my software on my github and, below, in my list of projects, you can see some of the work i&amp;rsquo;ve done.</description>
+    </item>
+    
+    <item>
+      <title>New paper announcement: matching fragments using images of fracture surface replicas</title>
+      <link>/2022/05/01/new-paper-announcement-matching-fragments-using-images-of-fracture-surface-replicas/</link>
+      <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/05/01/new-paper-announcement-matching-fragments-using-images-of-fracture-surface-replicas/</guid>
+      <description>I&amp;rsquo;m happy to announce a new paper in the Journal of Forensic Sciences, Quantitative matching of forensic evidence fragments utilizing 3D microscopy analysis of fracture surface replicas, which extends our prior work on fracture matching. Here we show that the method works when, instead of matching two fracture surfaces directly, we instead use replicas, which is common in forensic applications.</description>
     </item>
     
     <item>
