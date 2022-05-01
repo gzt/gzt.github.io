@@ -6,10 +6,20 @@
     <description>Recent content in classification on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 15 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/classification/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Talk at JSM Section on Imaging: CatSIM, a categorical image metric</title>
+      <link>/2021/08/15/talk-at-jsm-section-on-imaging-catsim-a-categorical-image-metric/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/08/15/talk-at-jsm-section-on-imaging-catsim-a-categorical-image-metric/</guid>
+      <description>I was one of the winners of the 2021 student paper competition for the ASA Section on Statistics in Imaging. You can see a version of the submitted paper, but substantial edits have been made in response to reviewer feedback in the time between the submission to the competition and the talk.
+ We introduce CatSIM, a new similarity metric for binary and multinary two- and three-dimensional images and volumes. CatSIM uses a structural similarity image quality paradigm and is robust to small perturbations in location so that structures in similar, but not entirely overlapping, regions of two images are rated higher than using simple matching.</description>
+    </item>
     
     <item>
       <title>Software for Matrix Variate LDA and QDA</title>

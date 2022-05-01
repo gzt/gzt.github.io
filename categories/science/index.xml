@@ -17,7 +17,37 @@
       <pubDate>Sun, 01 May 2022 00:00:00 +0000</pubDate>
       
       <guid>/2022/05/01/new-paper-announcement-matching-fragments-using-images-of-fracture-surface-replicas/</guid>
-      <description>I&amp;rsquo;m happy to announce a new paper in the Journal of Forensic Sciences, Quantitative matching of forensic evidence fragments utilizing 3D microscopy analysis of fracture surface replicas, which extends our prior work on fracture matching. Here we show that the method works when, instead of matching two fracture surfaces directly, we instead use replicas, which is common in forensic applications.</description>
+      <description>I&amp;rsquo;m happy to announce a new paper in the Journal of Forensic Sciences, Quantitative matching of forensic evidence fragments utilizing 3D microscopy analysis of fracture surface replicas, which extends our prior work on fracture matching. Here we show that the method works when, instead of matching two fracture surfaces directly, we instead use replicas, which is common in forensic applications.
+  Silicone casts are widely used by practitioners in the comparative analysis of forensic items.</description>
+    </item>
+    
+    <item>
+      <title>Great success: finally defended my dissertation</title>
+      <link>/2021/11/19/great-success-finally-defended-my-dissertation/</link>
+      <pubDate>Fri, 19 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/11/19/great-success-finally-defended-my-dissertation/</guid>
+      <description>The pandemic caused some unfortunate delays in my completion (and having employment that thankfully was accommodating to my need to finish helped a lot, but also slowed me down), but I finally defended my dissertation, titled &amp;ldquo;Applying, evaluating, and accelerating clustering&amp;rdquo;. It seems that I&amp;rsquo;ve won both the college&amp;rsquo;s awards for teaching excellence and research excellence on the way. The first chapter is a work I have discussed here previously on $k$-means image compression.</description>
+    </item>
+    
+    <item>
+      <title>Talk at JSM Section on Imaging: CatSIM, a categorical image metric</title>
+      <link>/2021/08/15/talk-at-jsm-section-on-imaging-catsim-a-categorical-image-metric/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/08/15/talk-at-jsm-section-on-imaging-catsim-a-categorical-image-metric/</guid>
+      <description>I was one of the winners of the 2021 student paper competition for the ASA Section on Statistics in Imaging. You can see a version of the submitted paper, but substantial edits have been made in response to reviewer feedback in the time between the submission to the competition and the talk.
+ We introduce CatSIM, a new similarity metric for binary and multinary two- and three-dimensional images and volumes. CatSIM uses a structural similarity image quality paradigm and is robust to small perturbations in location so that structures in similar, but not entirely overlapping, regions of two images are rated higher than using simple matching.</description>
+    </item>
+    
+    <item>
+      <title>New preprint: fracture mechanics-based quantitative matching of forensic evidence fragments</title>
+      <link>/2021/06/19/new-preprint-fracture-mechanics-based-quantitative-matching-of-forensic-evidence-fragments/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/06/19/new-preprint-fracture-mechanics-based-quantitative-matching-of-forensic-evidence-fragments/</guid>
+      <description>We released a new preprint, Fracture Mechanics-Based Quantitative Matching of Forensic Evidence Fragments. It is a fuller development of the forensics application which we discussed in our prior paper, Classification With the Matrix-Variate-$t$ Distribution.
+ Fractured metal fragments with rough and irregular surfaces are often found at crime scenes. Current forensic practice visually inspects the complex jagged trajectory of fractured surfaces to recognize a ``match&#39;&#39; using comparative microscopy and physical pattern analysis.</description>
     </item>
     
     <item>

@@ -6,10 +6,20 @@
     <description>Recent content in research on gzt does statistics</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 14 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/research/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>New preprint: fracture mechanics-based quantitative matching of forensic evidence fragments</title>
+      <link>/2021/06/19/new-preprint-fracture-mechanics-based-quantitative-matching-of-forensic-evidence-fragments/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/06/19/new-preprint-fracture-mechanics-based-quantitative-matching-of-forensic-evidence-fragments/</guid>
+      <description>We released a new preprint, Fracture Mechanics-Based Quantitative Matching of Forensic Evidence Fragments. It is a fuller development of the forensics application which we discussed in our prior paper, Classification With the Matrix-Variate-$t$ Distribution.
+ Fractured metal fragments with rough and irregular surfaces are often found at crime scenes. Current forensic practice visually inspects the complex jagged trajectory of fractured surfaces to recognize a ``match&#39;&#39; using comparative microscopy and physical pattern analysis.</description>
+    </item>
     
     <item>
       <title>Talk at the ISU TADS group on k-means image compression</title>

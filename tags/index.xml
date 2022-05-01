@@ -23,18 +23,63 @@
     <item>
       <title>C</title>
       <link>/tags/c/</link>
-      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/c/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>catsim</title>
+      <link>/tags/catsim/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/catsim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>classification</title>
+      <link>/tags/classification/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>clustering</title>
       <link>/tags/clustering/</link>
-      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>/tags/clustering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>images</title>
+      <link>/tags/images/</link>
+      <pubDate>Sun, 15 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/images/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>research</title>
+      <link>/tags/research/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/research/</guid>
       <description></description>
     </item>
     
@@ -44,42 +89,6 @@
       <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
       
       <guid>/tags/compression/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/tags/r/</link>
-      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>research</title>
-      <link>/tags/research/</link>
-      <pubDate>Thu, 14 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/research/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>catsim</title>
-      <link>/tags/catsim/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/catsim/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>images</title>
-      <link>/tags/images/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/images/</guid>
       <description></description>
     </item>
     
@@ -197,15 +206,6 @@
       <pubDate>Fri, 23 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/randomness/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>classification</title>
-      <link>/tags/classification/</link>
-      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/classification/</guid>
       <description></description>
     </item>
     
